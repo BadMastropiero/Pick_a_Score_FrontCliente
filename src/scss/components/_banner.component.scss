@@ -1,0 +1,79 @@
+.Banner{
+    animation-direction: alternate-reverse;
+    animation-duration: 30s;
+    animation-fill-mode: forwards ;
+    animation-iteration-count: infinite;
+    // animation-name: animate;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    align-items: center;
+    background-image: url(../../assets/imgs/welcome_banner8.jpeg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 100vh;
+    position: relative;
+    transition: 5s;
+    width: 100%;
+    z-index: var(--z-tooltip);
+    // @keyframes animate {
+    //     // 0%{
+    //     //     background-image: url(../../assets/imgs/welcome_banner1.png);
+    //     // }
+    //     // 20%{
+    //     //     background-image: url(../../assets/imgs/welcome_banner2.jpg);
+    //     // }
+    //     // 40%{
+    //     //     background-image: url(../../assets/imgs/welcome_banner3.png);
+    //     // }
+    //     // 60%{
+    //     //     background-image: url(../../assets/imgs/welcome_banner4.jpg);
+    //     // }
+    //     // 80%{
+    //     //     background-image: url(../../assets/imgs/welcome_banner7.jpg);
+    //     // }
+    //     // 100%{
+    //     //     background-image: url(../../assets/imgs/welcome_banner6.jpg);
+    //     // }
+    // }
+    &-content{
+        animation: beat 2s ease-in-out infinite alternate;
+        background-color: rgba(0,0,0,.9);
+        border-radius: 10px;
+        color: #F5F3F5;
+        margin: 50px;
+        max-width: 600px;
+        padding: 20px;
+        position: absolute;
+        transition: .6s;
+        @keyframes beat {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.08);
+            }
+        }
+        & h1 {
+            color: #F5F3F5;
+            font-size: 2.5em;
+            & span {
+                color: #FFD300;
+                font-size: 1.2em;
+                text-transform: uppercase;
+            }
+        }
+        & p {
+            margin: 20px;
+            text-align: justify;
+        }
+    }
+    &-btn{
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: 30px;
+    }
+
+}

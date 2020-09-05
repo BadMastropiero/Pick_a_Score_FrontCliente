@@ -1,0 +1,12 @@
+@import '../../mixins/_borders.scss';
+
+.CellBtn{
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    @include borders(#7b7b7b, #999);
+
+    &:active{
+        background-color: red;
+    }
+}

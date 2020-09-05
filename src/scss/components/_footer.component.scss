@@ -1,0 +1,62 @@
+.Footer{
+    background: linear-gradient(90deg, rgba(43,45,66,1) 32%, rgba(21,28,40,1) 68%);;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    margin-top: 100px;
+    padding: 20px;
+    &-left{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & h2{
+            color: var(--color-border);
+            font-size: 3rem;
+        }
+        & li {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 2rem;
+            & a{
+                color: var(--color-main-alert);
+                text-transform: uppercase;
+                margin-left: 2rem;                
+            }
+        }
+    }
+    &-right{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & h3{
+            color: var(--color-border);
+            border-bottom: 2px solid var(--color-main-light);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding: .5rem;
+        }
+        & p {
+            border-radius: 10px;
+            box-shadow: 3px 17px 146px -18px rgba(255,211,0,1);
+            color: var(--color-main-light);
+            margin-bottom: 2rem;
+            padding: .5rem;
+        }
+    }
+}
+
+.CopyRight{
+    background-color: black;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    & h3{
+        color: var(--color-main-light);
+    }
+}

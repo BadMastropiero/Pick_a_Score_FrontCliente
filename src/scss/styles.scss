@@ -1,0 +1,18 @@
+@import './config/config';
+@import './theme/colors';
+@import './base/base';
+@import './mixins/responsive';
+@import './icons/icons';
+
+// pages
+@import './pages/home-page';
+@import './pages/game-page';
+
+// components
+@import './components/navbar.component';
+@import './components/banner.component';
+@import './components/action-btn.component';
+@import './components/features-card.component';
+@import './components/footer.component';
+@import './components/GameComponents/main.component';
+@import './components/GameComponents/cell-btn.component';

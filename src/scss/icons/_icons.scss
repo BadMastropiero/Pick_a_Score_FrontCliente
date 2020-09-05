@@ -1,0 +1,64 @@
+.Facebook-icon{
+    &::before {
+        background-image: url(../../assets/icons/facebook.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        content: "";
+        display: block;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.Whatsapp-icon{
+    &::before {
+        background-image: url(../../assets/icons/whatsapp.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        content: "";
+        display: block;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.Twitter-icon{
+    &::before {
+        background-image: url(../../assets/icons/twitter.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        content: "";
+        display: block;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.Instagram-icon{
+    &::before {
+        background-image: url(../../assets/icons/instagram.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        content: "";
+        display: block;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.Kmada-icon{
+    &::before {
+        background-image: url(../../assets/icons/kmada.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        content: "";
+        display: block;
+        height: 50px;
+        width: 140px;
+    }
+}
