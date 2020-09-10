@@ -3,4 +3,6 @@ export enum CellValue {
     inactive,
 }
 
-export type Cell = { value: CellValue } 
+
+
+export type Cell = { value: CellValue, x: number, y:number} 

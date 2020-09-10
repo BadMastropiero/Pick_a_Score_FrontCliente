@@ -1,0 +1,1 @@
+export const basePath = "https://pick-a-score.herokuapp.com";

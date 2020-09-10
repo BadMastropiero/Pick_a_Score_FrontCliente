@@ -3,10 +3,11 @@
 .CellBtn{
     cursor: pointer;
     height: 45px;
+    overflow: hidden;
     width: 45px;
     @include borders(#7b7b7b, #999);
 
     &:active{
-        background-color: red;
+        background-color: #FFD300;
     }
 }

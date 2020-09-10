@@ -4,4 +4,24 @@
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    padding-top: 50px;
+    
+    width: 100%;
+}
+
+// @include from (large){
+//     .GameSection{
+//         align-content: center;
+//         overflow: scroll;
+//     }
+// }
+
+@media screen and (max-width: 380px) {
+    .GameSection{
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: scroll;
+    }
 }

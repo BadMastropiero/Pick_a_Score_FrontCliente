@@ -1,0 +1,37 @@
+.CheckoutForm{
+    &-form{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #ffffff;
+        h2 {
+            border-bottom: 1px solid white;
+            text-transform: uppercase;
+        }
+        img, h2 {
+            margin-top: 20px;
+        }
+    }
+    &-form:first-child div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & div, label {
+            margin: 20px;
+        }
+
+        & label {
+            border-bottom: 1px solid white;
+        }
+    }
+    &-access{
+        color: #FFD300;
+        text-transform: uppercase;
+        margin: 20px;
+        & p {
+            margin: 20px;
+        }
+    }
+}

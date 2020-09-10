@@ -5,9 +5,10 @@
     display: flex;
     height: 3.5rem;
     justify-content: space-around;
-    padding: px;
+    
     position: sticky;
     top: 0;
+    width: 100%;
     z-index: var(--z-fixed);
     &-logo{
         margin-right: 30px;
@@ -23,7 +24,7 @@
     &-user{
         color: #F5F3F5;
         letter-spacing: 2px;
-        margin-right: 5rem;
+        margin-right: 1rem;
         text-transform: uppercase;
     }
 }

@@ -3,11 +3,11 @@
     animation-duration: 30s;
     animation-fill-mode: forwards ;
     animation-iteration-count: infinite;
-    // animation-name: animate;
+    animation-name: animate;
     animation-play-state: running;
     animation-timing-function: ease-in-out;
     align-items: center;
-    background-image: url(../../assets/imgs/welcome_banner8.jpeg);
+    background-image: url(../../assets/imgs/welcome_banner1.jpg);
     background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,26 +18,20 @@
     transition: 5s;
     width: 100%;
     z-index: var(--z-tooltip);
-    // @keyframes animate {
-    //     // 0%{
-    //     //     background-image: url(../../assets/imgs/welcome_banner1.png);
-    //     // }
-    //     // 20%{
-    //     //     background-image: url(../../assets/imgs/welcome_banner2.jpg);
-    //     // }
-    //     // 40%{
-    //     //     background-image: url(../../assets/imgs/welcome_banner3.png);
-    //     // }
-    //     // 60%{
-    //     //     background-image: url(../../assets/imgs/welcome_banner4.jpg);
-    //     // }
-    //     // 80%{
-    //     //     background-image: url(../../assets/imgs/welcome_banner7.jpg);
-    //     // }
-    //     // 100%{
-    //     //     background-image: url(../../assets/imgs/welcome_banner6.jpg);
-    //     // }
-    // }
+    @keyframes animate {
+        20%{
+            background-image: url(../../assets/imgs/welcome_banner2.jpg);
+        }
+        40%{
+            background-image: url(../../assets/imgs/welcome_banner3.jpg);
+        }
+        60%{
+            background-image: url(../../assets/imgs/welcome_banner4.jpg);
+        }
+        100%{
+            background-image: url(../../assets/imgs/welcome_banner6.jpg);
+        }
+    }
     &-content{
         animation: beat 2s ease-in-out infinite alternate;
         background-color: rgba(0,0,0,.9);
@@ -66,13 +60,14 @@
             }
         }
         & p {
-            margin: 20px;
+            margin: 40px;
             text-align: justify;
         }
     }
     &-btn{
         display: flex;
         flex-direction: row-reverse;
+        margin: 30px;
         padding-right: 30px;
     }
 

@@ -1,0 +1,47 @@
+.animated-form .form-group {
+    position: relative;
+    display: flex;
+    margin-bottom: 45px;
+  }
+  
+  .form-group.flex-end {
+    justify-content: flex-end;
+  }
+  
+  .animated-form .form-group label {
+    position: relative;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 20px;
+    transition: 0.4s ease-out;
+  }
+  
+  .animated-form .form-group input {
+    display: block;
+    width: 100%;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid #aaa;
+    transition: 0.4s ease-out;
+    color: #666;
+    font-size: 20px;
+  }
+  
+  .animated-form .form-group:focus-within label,
+  .animated-form .form-group.has-content label {
+    top: 0px;
+    transform: translateY(-100%);
+    color: transparent;
+  }
+  .animated-form .form-group:focus-within input,
+  .animated-form .form-group.has-content input {
+    border-bottom-color: #181f1c;
+  }
+  .animated-form .form-group.flex-end {
+    margin-bottom: 25px;
+  }
+  

@@ -1,4 +1,6 @@
 import React, {ReactElement} from 'react'
+import {Link} from 'react-router-dom'
+import { AppRoutes as Routes } from '../../types/enums/app-routes.enum'
 
 import ActionBtn from '../ActionBtn'
 
@@ -19,7 +21,9 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({source, alt, title, descript
                 {description}
             </span>
             <div className="FeaturesContainer-btn">
-                <ActionBtn />
+                <ActionBtn>
+                <Link className="ActionBtn-name" to={Routes.GAME}> Pick this</Link>
+                </ActionBtn>
             </div>
         </div>
     )

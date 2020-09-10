@@ -1,27 +1,58 @@
 import React, { ReactElement } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {AppRoutes as Routes} from '../types/enums/app-routes.enum';
+import {AppRoutes, NonAuthRoutes, AuthRoutes} from '../types/enums/app-routes.enum';
 
 
 // Import Components
 import Navbar from '../components/TheNavbar';
 import TheFooter from '../components/TheFooter';
+import AuthRoute from '../routes'
 
 
 // Import Pages
 import HomePage from '../pages/HomePage';
 import GamePage from '../pages/GamePage';
 import SelectPage from '../pages/SelectPage';
+import RegisterCheckoutPage from '../pages/Register&CheckoutPage';
 
-const KmadaTech: React.FC = (): ReactElement => {
+const PickaScore: React.FC = (): ReactElement => {
   return (
     <div>
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path={Routes.HOME} component={HomePage} />
-          <Route exact path={Routes.GAME} component={GamePage} />
-          <Route exact path={Routes.SELECT} component={SelectPage} />
+          <Route 
+            exact path={NonAuthRoutes.HOME} 
+            component={HomePage} 
+          />
+          {/* <Route 
+            exact path={AppRoutes.HOME} 
+            component={HomePage} 
+          />
+            <Route 
+            exact path={AppRoutes.SELECT} 
+            component={SelectPage} 
+          />
+            <Route 
+            exact path={AppRoutes.GAME} 
+            component={GamePage} 
+          />
+          <Route 
+            exact path={AppRoutes.REGISTER} 
+            component={RegisterCheckoutPage} 
+          /> */}
+          <AuthRoute 
+            path={AuthRoutes.SELECT} 
+            Component={SelectPage}
+          />
+          <AuthRoute
+            exact path={AuthRoutes.GAME} 
+            Component={GamePage}
+          />
+          <AuthRoute
+            exact path={AuthRoutes.REGISTER} 
+            Component={RegisterCheckoutPage}
+          />
         </Switch>
         <TheFooter/>
       </Router>
@@ -29,4 +60,4 @@ const KmadaTech: React.FC = (): ReactElement => {
   )
 }
 
-export default KmadaTech
+export default PickaScore

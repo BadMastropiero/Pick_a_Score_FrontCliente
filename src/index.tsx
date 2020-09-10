@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import KmadaTech from './App/App';
+import PickaScore from './App/App';
 
 import './scss/styles.scss';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <KmadaTech />
+    <PickaScore />
   </React.StrictMode>,
   document.getElementById('root')
 );

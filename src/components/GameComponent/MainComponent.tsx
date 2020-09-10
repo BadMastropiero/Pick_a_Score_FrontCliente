@@ -9,9 +9,14 @@ const Team2 = '../../assets/logos/team2.png';
 
 const Game: React.FC =() : ReactElement => {
     const [cells, setCells] = useState(generateCells());
-
+    const onClick = (row:number, col:number) => {
+        alert(row+'-'+col)
+    }
+    
     const renderCells = (): React.ReactNode => {
-        return cells.map((row, rowIndex) => row.map((cell, colIndex) => <CellBtn key={`${rowIndex}-${colIndex}`} />))
+        return cells.map((row, rowIndex) => row.map((cell, colIndex) => 
+            <CellBtn row={rowIndex} col={colIndex} 
+        key={`${rowIndex}-${colIndex}`} />))
     }
 
     return (
@@ -19,8 +24,10 @@ const Game: React.FC =() : ReactElement => {
             <div className="Game">
                 <div className="Top">
                     <div className="Top-Team2">
-                        <div className="Logo-cropper">
-                            
+                        <div className="Team1-logo">
+                            <h1>
+                               Logo 
+                            </h1>
                         </div>    
                         <div className="Team2-name">
                             Team2

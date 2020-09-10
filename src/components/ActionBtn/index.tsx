@@ -1,9 +1,8 @@
 import React, { ReactElement } from 'react'
-import {Link} from 'react-router-dom'
-import { AppRoutes as Routes } from '../../types/enums/app-routes.enum'
 
 
-const ActionBtn: React.FC  = (title): ReactElement => {
+
+const ActionBtn: React.FC  = ({children}): ReactElement => {
     
     return (
         <div className="ActionBtn"> 
@@ -12,7 +11,7 @@ const ActionBtn: React.FC  = (title): ReactElement => {
                 <span></span>
                 <span></span>
                 <span></span>
-                <Link className="ActionBtn-name" to={Routes.GAME}> Pick a Score</Link>
+                {children}
             </span>
         </div>
     )

@@ -7,9 +7,6 @@ const GamePage: React.FC = (): ReactElement => {
     return (
         <Fragment>
             <div className="GameSection">
-                <div className="Logos">
-                    <img src={team1} alt=""/>
-                </div>
                 <Game/>
             </div>
         </Fragment>

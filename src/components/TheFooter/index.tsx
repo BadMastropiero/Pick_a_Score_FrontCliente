@@ -39,7 +39,9 @@ const TheFooter: React.FC = (): ReactElement => {
                         Voluptatum rerum labore corrupti, error laudantium inventore.
                     </p>
                     <div className="Footer-btn">
-                        <ActionBtn />
+                        <ActionBtn>
+                            Read
+                        </ActionBtn>
                     </div>
                 </div>
             </div>

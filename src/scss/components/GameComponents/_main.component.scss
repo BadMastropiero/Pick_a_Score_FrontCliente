@@ -2,25 +2,27 @@
 @import '../../mixins/align';
 
 .Game{
-    background: var(--color-secondary-light);
-    box-shadow: 3px 11px 146px -18px rgba(245,243,245,1);
+    background: #49345B;
     border-radius: 10px;
-    max-width: 800px;
-    overflow-x: scroll;
+    height: 1000px !important;
     padding: 2px;
-    @include borders (white, #999);
+    width: 1080px;
+    @include borders (#FFD300, #E0BB00);
     @include column-center
 }
 
 .Top{
     transform: translateX(73px);
-    width: 100%;
+    width: 70%;
     @include column-center;
     &-Team2{
+        color: #FFD300;
         @include column-center;
     }
     &-Score{
-        @include row-center;
+        // @include row-center;
+        display: flex;
+        flex-direction: row;
         & h1{
             margin-left: 18px;
             margin-right: 18px;
@@ -49,7 +51,8 @@
 }
 
 .Left{
-    width: 100%;
+    // max-width: 300px;
+    color: #FFD300;
     @include column-center;
     &-Score{
         @include row-center;
@@ -61,6 +64,8 @@
 }
 
 .MainBody{
+    // max-width: 300px;
+    // overflow-x: scroll;
     @include row-center;
     .Left{
         width: 100%;
@@ -74,6 +79,8 @@
     display: grid;
     grid-template-rows: repeat(10, 1fr);
     grid-template-columns: repeat(10, 1fr);
+    
+    padding: 2px;
     transform: translateX(-190px);
     @include borders (#7b7b7b, #999)
 }
