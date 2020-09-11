@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import ActionBtn from '../ActionBtn'
 
 import {checkOut} from '../../API/users';
+
 const handlerOnClick = async() => {
     const result = await checkOut()
     // alert(result)
@@ -20,13 +21,12 @@ const handlerOnClick = async() => {
               toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
         })
-          
         Toast.fire({
             icon: 'error',
             title: result.message
         })
     }else{
-        const {approveLink} = result.data ;
+        const {approveLink} = result.data;
         window.location.assign(String(approveLink))
     }
 }
@@ -94,7 +94,6 @@ export const CheckoutForm = () => {
                 className="Modal"
                 overlayClassName="Overlay"
             > 
-                
             </Modal>
         </Fragment>
     )
