@@ -1,4 +1,5 @@
 .Banner{
+    align-content: center;
     animation-direction: alternate-reverse;
     animation-duration: 30s;
     animation-fill-mode: forwards ;
@@ -12,7 +13,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    justify-content: center;
     min-height: 100vh;
     position: relative;
     transition: 5s;
