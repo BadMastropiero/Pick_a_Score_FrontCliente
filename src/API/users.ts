@@ -22,12 +22,19 @@ export function signIn(data:any){
         console.log(error)
     })
 }
-
+function openInNewTab(url:string) {
+    const win:any = window.open(url, '_blank');
+    win.focus();
+  }
 export function checkOut() {
+
     const url =`${basePath}/paypal/checkoutBet`;
 
     const params = {
         method:'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
             "user": "5f545db5ab1a2dc54485dcae",
             "game": "5f5403a479e9922e717934ef",
@@ -37,12 +44,15 @@ export function checkOut() {
             }
         })
     }
-
+    // alert(JSON.stringify(params))
     return fetch(url, params)
     .then(response => {
         return response.json();
     })
     .then(result => {
+        // console.log(result)
+        // alert(JSON.stringify(result))
+        openInNewTab(result.data.approveLink)
         return result;
     })
     .catch(error => {

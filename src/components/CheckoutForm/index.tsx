@@ -27,7 +27,7 @@ const handlerOnClick = async() => {
         })
     }else{
         const {approveLink} = result.data;
-        window.location.assign(String(approveLink))
+        // window.location.assign(String(approveLink))
     }
 }
 

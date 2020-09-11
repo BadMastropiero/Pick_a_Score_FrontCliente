@@ -85,7 +85,7 @@ export const HomeInput = () => {
     return (
         <div className="animated-form">
             <div className="form-group">
-                <form className='form'  onChange={onChange}>                
+                <form name="HomeInput" className='form'  onChange={onChange}>                
                     <label>Password</label>
                     <input
                         type="password"
