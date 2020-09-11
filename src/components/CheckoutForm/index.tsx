@@ -9,7 +9,7 @@ const handlerOnClick = async() => {
     const result = await checkOut()
     // alert(result)
     console.log(result)
-    if (result.code != 200) {
+    if (result.code !== 200) {
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -94,6 +94,7 @@ export const CheckoutForm = () => {
                 className="Modal"
                 overlayClassName="Overlay"
             > 
+                <button className="CloseBtn" onClick={()=> setModalIsOpen(!modalIsOpen)}>X</button>
             </Modal>
         </Fragment>
     )

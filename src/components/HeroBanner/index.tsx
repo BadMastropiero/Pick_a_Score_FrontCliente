@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react'
 
-import ActionBtn from '../ActionBtn'
 import {HomeInput} from '../HomeInput'
 
 const HeroBanner: React.FC = (): ReactElement =>{

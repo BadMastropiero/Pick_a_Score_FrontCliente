@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {AppRoutes, NonAuthRoutes, AuthRoutes} from '../types/enums/app-routes.enum';
+import {NonAuthRoutes, AuthRoutes} from '../types/enums/app-routes.enum';
 
 
 // Import Components

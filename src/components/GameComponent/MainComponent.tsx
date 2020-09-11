@@ -4,14 +4,16 @@ import {generateCells} from '../../utils' ;
 import CellBtn from '../GameComponent/CellBtn';
 
 // const Team1 = '../../assets/logos/team1.png'
-const Team2 = '../../assets/logos/team2.png';
+// const Team2 = '../../assets/logos/team2.png';
 
 
 const Game: React.FC =() : ReactElement => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [cells, setCells] = useState(generateCells());
-    const onClick = (row:number, col:number) => {
-        alert(row+'-'+col)
-    }
+    
+    // const onClick = (row:number, col:number) => {
+    //     alert(row+'-'+col)
+    // }
     
     const renderCells = (): React.ReactNode => {
         return cells.map((row, rowIndex) => row.map((cell, colIndex) => 

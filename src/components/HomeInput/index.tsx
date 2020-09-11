@@ -1,7 +1,7 @@
-import React, { useReducer, Reducer, ChangeEvent, useState } from 'react'
-import {minLengthValidation} from '../../API/form-validation';
+import React, { useReducer, Reducer, ChangeEvent } from 'react'
+// import {minLengthValidation} from '../../API/form-validation'
 import {signIn} from '../../API/users';
-import {ACCESS_TOKEN,REFRESH_TOKEN} from '../../constants';
+import {ACCESS_TOKEN} from '../../constants';
 import Swal from 'sweetalert2';
 import ActionBtn from '../ActionBtn';
 
@@ -20,9 +20,9 @@ export const HomeInput = () => {
     const onChange = (event: ChangeEvent<HTMLFormElement>) => {
        dispatch({ field: event.target.name, value: event.target.value })
     }
-    const [formValid, setFormValid] = useState({
-        password: false,
-    });
+    // const [formValid, setFormValid] = useState({
+    //     password: false,
+    // });
  
     const handlerOnClick = async() => {
         //let pin:HTMLElement 
@@ -30,7 +30,7 @@ export const HomeInput = () => {
         const result = await signIn(state);     
         //alert(JSON.stringify(result))
         // console.log("Result",result) 
-        if(result.code!= 200){
+        if(result.code!== 200){
            const Toast = Swal.mixin({
               toast: true,
               position: 'top-end',
@@ -68,12 +68,11 @@ export const HomeInput = () => {
               icon: 'success',
               title: 'Signed in successfully'
             })          
-        }
-  
-     }
+        }  
+    }
      
      const inputValidation = (e: ChangeEvent<HTMLInputElement>) => {
-        const { type, name,value } = e.target
+        const { type, value } = e.target
         if (type === "password") {
             dispatch({field:"password",value:value})
             /*setFormValid({
