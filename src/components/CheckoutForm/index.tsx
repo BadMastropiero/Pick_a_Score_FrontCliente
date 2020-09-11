@@ -80,10 +80,6 @@ export const CheckoutForm = () => {
                             </ActionBtn>
                         </div>
                     </fieldset>
-                    <div className="CheckoutForm-access">
-                        <span>Su código de acceso es:  </span>
-                        <p>Con este código podrá acceder libremente a esta plataforma</p>
-                    </div>
                 </form>
             </div>
             <Modal

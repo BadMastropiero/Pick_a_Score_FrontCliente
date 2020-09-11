@@ -1,6 +1,6 @@
 import React, { Fragment, ReactElement, useState } from 'react';
 import {Link} from 'react-router-dom'
-import { AppRoutes as Routes } from '../../types/enums/app-routes.enum'
+import { AuthRoutes } from '../../types/enums/app-routes.enum'
 import Modal from 'react-modal';
 
 import ActionBtn from '../ActionBtn';
@@ -30,7 +30,7 @@ const CellBtn: React.FC<CellBtnProp> = ({row, col}): ReactElement => {
                         </span>
                         <div className="Modal-btn">
                             <ActionBtn>
-                                <Link to={Routes.REGISTER} className="ActionBtn-name" > comprar</Link>
+                                <Link to={AuthRoutes.REGISTER} className="ActionBtn-name" > comprar</Link>
                             </ActionBtn>
                         </div>
                     </div>

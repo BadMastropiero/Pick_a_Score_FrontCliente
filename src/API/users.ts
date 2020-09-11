@@ -22,10 +22,7 @@ export function signIn(data:any){
         console.log(error)
     })
 }
-function openInNewTab(url:string) {
-    const win:any = window.open(url, '_blank');
-    win.focus();
-  }
+
 export function checkOut() {
 
     const url =`${basePath}/paypal/checkoutBet`;
@@ -58,4 +55,9 @@ export function checkOut() {
     .catch(error => {
         console.log(error)
     })
+}
+
+function openInNewTab(url:string) {
+    const win:any = window.open(url, '_blank');
+    win.focus();
 }

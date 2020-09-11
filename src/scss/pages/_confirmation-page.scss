@@ -1,0 +1,25 @@
+.ConfirmationPage{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    justify-content: center;
+    margin-top: 40px;
+    &-info{
+        align-items: center;
+        border: 2px solid var(--color-border);
+        border-radius: 10px;
+        color: #FFD300;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 40px;
+        text-transform: uppercase;
+        & span {
+            margin: 20px;
+        }
+    }
+    &-btn{
+        margin: 20px;
+    }
+}

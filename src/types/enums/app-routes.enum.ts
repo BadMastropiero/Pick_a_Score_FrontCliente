@@ -1,9 +1,10 @@
-export enum AppRoutes {
-    HOME = '/',
-    SELECT = '/select',
-    GAME = '/game',
-    REGISTER = '/checkout'
-}
+// export enum AppRoutes {
+//     HOME = '/',
+//     SELECT = '/select',
+//     GAME = '/game',
+//     REGISTER = '/checkout',
+//     CONFIRMATION = '/confirmation' 
+// }
 
 export enum UserRoles {
     admin = 'admin',
@@ -13,7 +14,8 @@ export enum UserRoles {
 export enum AuthRoutes {
     SELECT = '/select',
     GAME = '/game',
-    REGISTER = '/checkout'
+    REGISTER = '/checkout',
+    CONFIRMATION = '/confirmation' 
 }
 
 export enum NonAuthRoutes {

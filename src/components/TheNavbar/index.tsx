@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import {Link} from 'react-router-dom'
-import { AppRoutes as Routes } from '../../types/enums/app-routes.enum'
+import {  AuthRoutes } from '../../types/enums/app-routes.enum'
 
 import ActionBtn from '../ActionBtn'
 
@@ -11,7 +11,7 @@ const Navbar: React.FC = (): ReactElement => {
                 <h1 className="Header-logo">LOGO</h1>
                 <i className="Logo-icon"></i>
                 <ActionBtn>
-                    <Link className="ActionBtn-name" to={Routes.SELECT}> Select a Game</Link>
+                    <Link className="ActionBtn-name" to={AuthRoutes.SELECT}> Select a Game</Link>
                 </ActionBtn>
             </div>
             <div className="Header-right">
