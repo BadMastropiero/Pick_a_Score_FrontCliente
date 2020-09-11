@@ -25,9 +25,6 @@ const handlerOnClick = async() => {
             icon: 'error',
             title: result.message
         })
-    }else{
-        const {approveLink} = result.data;
-        // window.location.assign(String(approveLink))
     }
 }
 
