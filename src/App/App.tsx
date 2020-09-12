@@ -15,6 +15,7 @@ import GamePage from '../pages/GamePage';
 import SelectPage from '../pages/SelectPage';
 import RegisterCheckoutPage from '../pages/Register&CheckoutPage';
 import ConfirmationPage from '../pages/ConfirmationPage';
+import InfoPage from '../pages/InfoPage';
 
 const PickaScore: React.FC = (): ReactElement => {
   return (
@@ -26,22 +27,6 @@ const PickaScore: React.FC = (): ReactElement => {
             exact path={NonAuthRoutes.HOME} 
             component={HomePage} 
           />
-          {/* <Route 
-            exact path={AppRoutes.HOME} 
-            component={HomePage} 
-          />
-            <Route 
-            exact path={AppRoutes.SELECT} 
-            component={SelectPage} 
-          />
-            <Route 
-            exact path={AppRoutes.GAME} 
-            component={GamePage} 
-          />
-          <Route 
-            exact path={AppRoutes.REGISTER} 
-            component={RegisterCheckoutPage} 
-          /> */}
           <AuthRoute 
             path={AuthRoutes.SELECT} 
             Component={SelectPage}
@@ -57,6 +42,10 @@ const PickaScore: React.FC = (): ReactElement => {
           <AuthRoute 
             path = {AuthRoutes.CONFIRMATION}
             Component={ConfirmationPage}
+          />
+          <AuthRoute 
+            path = {NonAuthRoutes.INFO}
+            Component = {InfoPage}
           />
         </Switch>
         <TheFooter/>

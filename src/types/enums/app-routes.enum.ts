@@ -20,6 +20,7 @@ export enum AuthRoutes {
 
 export enum NonAuthRoutes {
     HOME = '/',
+    INFO = '/information'
 }
 
 export const userRoles = {

@@ -2,19 +2,16 @@ import React, { Fragment, ReactElement, useState } from 'react'
 
 import {generateCells} from '../../utils' ;
 import CellBtn from '../GameComponent/CellBtn';
+import ActionBtn from '../ActionBtn';
 
-// const Team1 = '../../assets/logos/team1.png'
-// const Team2 = '../../assets/logos/team2.png';
+import Team1 from '../../assets/logos/NFLTeams/team1.png'
+import Team2 from '../../assets/logos/NFLTeams/team2.png';
 
 
 const Game: React.FC =() : ReactElement => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [cells, setCells] = useState(generateCells());
-    
-    // const onClick = (row:number, col:number) => {
-    //     alert(row+'-'+col)
-    // }
-    
+        
     const renderCells = (): React.ReactNode => {
         return cells.map((row, rowIndex) => row.map((cell, colIndex) => 
             <CellBtn row={rowIndex} col={colIndex} 
@@ -22,17 +19,16 @@ const Game: React.FC =() : ReactElement => {
     }
 
     return (
-        <Fragment> 
+        <Fragment>
+            <div className="GamePage">
             <div className="Game">
                 <div className="Top">
                     <div className="Top-Team2">
-                        <div className="Team1-logo">
-                            <h1>
-                               Logo 
-                            </h1>
+                        <div className="Team2-logo">
+                           <img className="Logo-img" src={Team1} alt=""/>
                         </div>    
-                        <div className="Team2-name">
-                            Team2
+                        <div className="Team-name">
+                            <span>Team2</span>
                         </div>
                         <div className="Top-Score">
                                 <h1>
@@ -71,15 +67,13 @@ const Game: React.FC =() : ReactElement => {
                 <div className="MainBody">
                     <div className="Left">
                         <div className="Team1-logo">
-                            <h1>
-                               Logo 
-                            </h1>
+                            <img className="Logo-img" src={Team2} alt=""/>
                         </div> 
-                        <div className="Left-Team1">
-                            Team1
+                        <div className="Team-name">
+                            <span>Team1</span>
                         </div>
                         <div className="Left-Score">
-                        <h1>
+                                <h1>
                                     9
                                 </h1>
                                 <h1>
@@ -114,8 +108,23 @@ const Game: React.FC =() : ReactElement => {
                     <div className="Body">
                         {renderCells()}
                     </div>
+                    <div className="ScoreCount">
+                        <span>
+                            Actualemente: 
+                            <br/> 
+                                <div className="ScoreCount-Score">
+                                    <ActionBtn> 
+                                        500
+                                    </ActionBtn>
+                                </div>
+                            <br/>
+                            En juego
+                        </span>
+                    </div>
                 </div>
             </div>  
+            </div> 
+           
         </Fragment>
     )
 }

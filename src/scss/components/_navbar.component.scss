@@ -3,15 +3,31 @@
     background: linear-gradient(90deg, rgba(43,45,66,1) 32%, rgba(21,28,40,1) 68%);
     box-shadow: -1px 14px 34px 8px rgba(0,0,0,0.75);
     display: flex;
-    height: 3.5rem;
+    height: 4.5rem;
     justify-content: space-around;
-    
     position: sticky;
     top: 0;
     width: 100%;
     z-index: var(--z-fixed);
     &-logo{
+        cursor: pointer;
+        display: inline;
+        height: 100%;
         margin-right: 30px;
+        margin-top: 10px;
+        object-fit: cover;
+        transition: .6s;
+        width: auto;
+        &:hover{
+            transform: scale(1.38);
+        }
+    }
+    &-img{
+        height: 50px;
+        overflow: hidden;
+        position: relative;
+        width: 85px;
+        padding-bottom: 5px;
     }
     &-left{
         align-items: center;

@@ -2,17 +2,17 @@
 @import '../../mixins/align';
 
 .Game{
-    background: #49345B;
+    background: #0C0910;
     border-radius: 10px;
-    height: 1000px !important;
-    padding: 2px;
+    height: 1000px;
+    padding: 30px;
     width: 1080px;
     @include borders (#FFD300, #E0BB00);
     @include column-center
 }
 
 .Top{
-    transform: translateX(73px);
+    transform: translateX(-28px);
     width: 70%;
     @include column-center;
     &-Team2{
@@ -30,31 +30,45 @@
     }
 }
 
-// .Logo-cropper{
-//     border-radius: 50%;
-//     height: 45px;
-//     overflow: hidden;
-//     position: relative;
-//     width: 45px;
-// }
+.Logo-img{
+    border-radius: 10px;
+    display: inline;
+    height: 100%;
+    object-fit: cover;
+    width: auto;
+}
 
-// .Logo-img{
-//     cursor: pointer;
-//     display: inline;
-//     height: 100%;
-//     object-fit: cover;
-//     width: auto;
-// }
+.Team-name{
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+    cursor: default;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    padding: 5px;
+    text-transform: uppercase;
+}
 
 .Team1-logo{
-    padding-bottom: 30px;
+    height: 65px;
+    overflow: hidden;
+    position: relative;
+    width: 65px;
+    padding-bottom: 5px;
+}
+
+.Team2-logo{
+    height: 65px;
+    overflow: hidden;
+    position: relative;
+    width: 65px;
+    padding-bottom: 5px;
 }
 
 .Left{
-    // max-width: 300px;
     color: #FFD300;
     @include column-center;
     &-Score{
+        margin-bottom: 10px;
         @include row-center;
         & h1 {
             margin-left: 18px;
@@ -64,8 +78,6 @@
 }
 
 .MainBody{
-    // max-width: 300px;
-    // overflow-x: scroll;
     @include row-center;
     .Left{
         width: 100%;
@@ -79,8 +91,22 @@
     display: grid;
     grid-template-rows: repeat(10, 1fr);
     grid-template-columns: repeat(10, 1fr);
-    
     padding: 2px;
     transform: translateX(-190px);
-    @include borders (#7b7b7b, #999)
+    @include borders(#020202, #141414);
+}
+
+.ScoreCount{
+    text-align: center;
+    text-decoration: double;
+    text-transform: uppercase;
+    transform: translateX(-120px);
+    & span {
+        color: #FFD300;
+        font-size: 1.5rem;
+
+    }
+    &-Score{
+        margin-top: 30px;;
+    }
 }

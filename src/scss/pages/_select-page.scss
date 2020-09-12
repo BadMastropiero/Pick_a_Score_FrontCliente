@@ -1,0 +1,24 @@
+.Features {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    padding: 20px;
+}
+
+.Features-content{
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    margin: 7rem 0 7rem 0;
+    & h2{
+        border-bottom: 2px solid var(--color-main-light);
+        color: #DE3C4B;
+        cursor: default;
+        font-size: 3rem;
+        letter-spacing: 2px;
+        text-align: center;
+        text-transform: uppercase;
+        -webkit-box-reflect: below .5px linear-gradient(transparent, #0005);
+    }
+}
