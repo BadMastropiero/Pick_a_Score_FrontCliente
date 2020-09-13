@@ -1,18 +1,47 @@
 @import '../../mixins/_borders.scss';
 
 .CellBtn{
+    align-items: center;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 45px;
     overflow: hidden;
     transition: .6s;
     width: 45px;
     @include borders(#020202, #141414);
+    &-score{
+        
+        border: 2px solid #E8E9EB;
+        background: linear-gradient(45deg, rgba(11,8,14,1) 25%, rgba(11,57,72,1) 50%, rgba(11,57,72,1) 75%);
+        border-radius: 10px;
+        box-shadow:  26px -26px 52px #666767, 
+                     -26px 26px 52px #ffffff;
+        padding: 7px;
+        &:hover{
+            animation: beat .5s ease-in-out infinite alternate;
+            @keyframes beat {
+                from {
+                    transform: scale(1);
+                }
+                to {
+                    transform: scale(1.08);
+                }
+            }
+        }
+       
+    }
+    & span {
+        color: var(--color-main-light);
+    }
 
     &:hover{
         background-color: #C724B1;
         box-shadow: 0px 3px 36px 6px rgba(199,36,177,1);
         transition: .6s;
     }
+    
 
     &:active{
         background-color: #FFD300;
