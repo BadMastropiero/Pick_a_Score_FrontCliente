@@ -78,9 +78,9 @@ export function registerUser(data: any) {
             return response.json();
         })
         .then(result => {
-            //console.log(result.data)     
-            if (result.code != 200) {
-                throw new Error(result.data)
+            
+            if (result.code !== 200) {
+                return result
             }
             return result.data;
         })

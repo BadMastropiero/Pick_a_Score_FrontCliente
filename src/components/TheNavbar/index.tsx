@@ -23,9 +23,13 @@ const Navbar: React.FC = (): ReactElement => {
     const [modalProps, setModalProps] = useState(modalPropsDefault)
 
     const submitHandler = (data: any) => {
-        console.log(data)
-        registerUser(data).then( userData=> {
-            console.log(userData)
+        
+        registerUser(data).then(userData => {
+            if (userData.errors) {
+                alert('Error al registrar, email ya existente')
+                return
+            }
+            alert('Registrado correctamente')
             closeModal()
         }).catch(err => {
             alert('Error al registrar')
@@ -53,7 +57,7 @@ const Navbar: React.FC = (): ReactElement => {
         let newValues = { ...oldValues }
         setModalProps(newValues)
     }, [])
-    
+
     return (
         <div className="Header">
             <UserRegisterPage {...modalProps} />
