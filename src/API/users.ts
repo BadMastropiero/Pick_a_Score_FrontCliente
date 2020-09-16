@@ -1,34 +1,34 @@
-import {basePath} from '../API/config';
+import { basePath } from '../API/config';
 
-export function signIn(data:any){
+export function signIn(data: any) {
     const url = `${basePath}/auth/signIn`;
     // alert(JSON.stringify(data.password))
     const params = {
-        method:'POST',
-        headers:{
+        method: 'POST',
+        headers: {
             "pin": data.password
         }
     }
 
-    return fetch(url,params)
-    .then(response => {
-        return response.json();
-    })
-    .then(result => {  
-        console.log(result)    
-        return result;
-    })
-    .catch(error => {
-        console.log(error)
-    })
+    return fetch(url, params)
+        .then(response => {
+            return response.json();
+        })
+        .then(result => {
+            console.log(result)
+            return result;
+        })
+        .catch(error => {
+            console.log(error)
+        })
 }
 
 export function checkOut() {
 
-    const url =`${basePath}/paypal/checkoutBet`;
+    const url = `${basePath}/paypal/checkoutBet`;
 
     const params = {
-        method:'POST',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -43,21 +43,48 @@ export function checkOut() {
     }
     // alert(JSON.stringify(params))
     return fetch(url, params)
-    .then(response => {
-        return response.json();
-    })
-    .then(result => {
-        // console.log(result)
-        // alert(JSON.stringify(result))
-        openInNewTab(result.data.approveLink)
-        return result;
-    })
-    .catch(error => {
-        console.log(error)
-    })
+        .then(response => {
+            return response.json();
+        })
+        .then(result => {
+            // console.log(result)
+            // alert(JSON.stringify(result))
+            openInNewTab(result.data.approveLink)
+            return result;
+        })
+        .catch(error => {
+            console.log(error)
+        })
 }
 
-function openInNewTab(url:string) {
-    const win:any = window.open(url, '_blank');
+function openInNewTab(url: string) {
+    const win: any = window.open(url, '_blank');
     win.focus();
+}
+
+export function registerUser(data: any) {
+    const url = `${basePath}/user/user/`;
+    const params = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({ email: data.email, name: data.name, nickname: data.nickname })
+    }
+
+    return fetch(url, params)
+        .then(response => {
+            return response.json();
+        })
+        .then(result => {
+            
+            if (result.code !== 200) {
+                return result
+            }
+            return result.data;
+        })
+        .catch(error => {
+            return error
+        })
 }
