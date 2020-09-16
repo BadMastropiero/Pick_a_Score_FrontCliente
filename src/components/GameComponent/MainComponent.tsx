@@ -110,7 +110,7 @@ const Game: React.FC =() : ReactElement => {
                     </div>
                     <div className="ScoreCount">
                         <span>
-                            Actualemente: 
+                            Actualmente: 
                             <br/> 
                                 <div className="ScoreCount-Score">
                                     <ActionBtn> 
