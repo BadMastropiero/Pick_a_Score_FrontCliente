@@ -23,7 +23,7 @@ const handlerOnClick = async() => {
         })
         Toast.fire({
             icon: 'error',
-            title: result.message
+            title: error.message
         })
     }
 }
