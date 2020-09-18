@@ -2,6 +2,7 @@ import React, { ReactElement, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthRoutes, NonAuthRoutes } from '../../types/enums/app-routes.enum';
 import { registerUser } from '../../API/users'
+import {scrollToTop} from '../../utils'
 
 import ActionBtn from '../ActionBtn';
 import LOGO from '../../assets/logos/LOGO_V1.png';
@@ -63,13 +64,13 @@ const Navbar: React.FC = (): ReactElement => {
             <UserRegisterPage {...modalProps} />
             <div className="Header-left">
                 <div className="Header-logo">
-                    <Link to={NonAuthRoutes.HOME}>
+                    <Link onClick={scrollToTop} to={NonAuthRoutes.HOME}>
                         <img className="Header-img" src={LOGO} alt="" />
                     </Link>
                 </div>
                 <i className="Logo-icon"></i>
                 <ActionBtn>
-                    <Link className="ActionBtn-name" to={AuthRoutes.SELECT}> Acceso a las Quinelas</Link>
+                    <Link onClick={scrollToTop} className="ActionBtn-name" to={AuthRoutes.SELECT}> Acceso a las Quinelas</Link>
                 </ActionBtn>
             </div>
             <div className="Header-right">

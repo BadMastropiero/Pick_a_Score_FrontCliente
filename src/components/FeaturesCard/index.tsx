@@ -20,11 +20,6 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({source, alt, title, descript
             <span className="FeaturesContainer-text">
                 {description}
             </span>
-            <div className="FeaturesContainer-btn">
-                <ActionBtn>
-                <Link className="ActionBtn-name" to={AuthRoutes.GAME}> Pick this</Link>
-                </ActionBtn>
-            </div>
         </div>
     )
 }

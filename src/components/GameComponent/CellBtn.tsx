@@ -2,6 +2,8 @@ import React, { Fragment, ReactElement, useState } from 'react';
 import {Link} from 'react-router-dom'
 import { AuthRoutes } from '../../types/enums/app-routes.enum'
 import Modal from 'react-modal';
+import {scrollToTop} from '../../utils'
+
 
 import ActionBtn from '../ActionBtn';
 
@@ -34,7 +36,7 @@ const CellBtn: React.FC<CellBtnProp> = ({row, col}): ReactElement => {
                         </span>
                         <div className="Modal-btn">
                             <ActionBtn>
-                                <Link to={AuthRoutes.REGISTER} className="ActionBtn-name" > comprar</Link>
+                                <Link onClick={scrollToTop} to={AuthRoutes.REGISTER} className="ActionBtn-name" > comprar</Link>
                             </ActionBtn>
                         </div>
                     </div>

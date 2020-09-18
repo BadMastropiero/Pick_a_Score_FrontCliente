@@ -58,7 +58,7 @@ export function checkOut() {
 }
 
 function openInNewTab(url: string) {
-    const win: any = window.open(url, '_blank');
+    const win: any = window.open(url, '_blank');  // TODO change the open in new tab for href
     win.focus();
 }
 

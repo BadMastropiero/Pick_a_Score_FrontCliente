@@ -1,6 +1,7 @@
 import React, { Fragment, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import {NonAuthRoutes} from '../../types/enums/app-routes.enum';
+import {scrollToTop} from '../../utils';
 
 import ActionBtn from '../ActionBtn'
 
@@ -36,7 +37,7 @@ const TheFooter: React.FC = (): ReactElement => {
                         Juega el Juego <br/> con <br/> Pickascore
                     </h3>
                     <div className="Footer-btn">
-                        <Link to={NonAuthRoutes.INFO}>
+                        <Link onClick={scrollToTop} to={NonAuthRoutes.INFO}>
                             <ActionBtn>
                                 Conoce las reglas
                             </ActionBtn>
