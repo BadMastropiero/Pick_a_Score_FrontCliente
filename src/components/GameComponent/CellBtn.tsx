@@ -16,7 +16,7 @@ const CellBtn: React.FC<CellBtnProp> = ({row, col}): ReactElement => {
         <Fragment>
             <div className="CellBtn" onClick={()=>{setModalIsOpen(!modalIsOpen)}}> 
                 <div className="CellBtn-score">
-                    <span>{row+':'+col}</span>
+                    <span>{row+'-'+col}</span>
                 </div>
             </div>
                 <Modal 

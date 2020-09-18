@@ -5,22 +5,22 @@
 
 @font-face{
     font-family: 'aurach-bi';
-    src: url(../../assets/fonts/aurach_tri/aurach_bi.ttf)
+    src: url('../../assets/fonts/aurach_tri/aurach_bi.ttf') format('truetype')
 }
 
 @font-face{
     font-family: 'aurach-heavy';
-    src: url(../../assets/fonts/aurach_tri/aurach_heavy.ttf)
+    src: url('../../assets/fonts/aurach_tri/aurach_heavy.ttf') format('truetype')
 }
 
 @font-face{
     font-family: 'budmo-jiggler';
-    src: url(../../assets/fonts/budmo/budmo_jiggler.ttf)
+    src: url('../../assets/fonts/budmo/budmo_jiggler.ttf') format('truetype')
 }
 
 @font-face{
     font-family: 'budmo-jigglish';
-    src: url(../../assets/fonts/budmo/budmo_jigglish.ttf)
+    src: url('../../assets/fonts/budmo/budmo_jigglish.ttf') format('truetype')
 }
 
 @font-face{
@@ -30,5 +30,15 @@
 
 @font-face{
     font-family: 'mexcellent-rg';
-    src: url(../../assets/fonts/mexcellent/mexcellent_rg.ttf)
+    src: url('../../assets/fonts/mexcellent/mexcellent_rg.ttf') format('truetype')
+}
+
+@font-face{
+    font-family: 'night-club-70s-regular';
+    src: url('../../assets/fonts/night_club_70s/night_club_70s_regular.ttf') format('truetype')
+}
+
+@font-face{
+    font-family: 'beon';
+    src: url('../../assets/fonts/beon/beon.otf') format('opentype')
 }

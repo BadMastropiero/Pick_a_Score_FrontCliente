@@ -10,6 +10,7 @@
     &-title{
         border-bottom: 2px solid var(--color-border);
         color: var(--color-main-alert);
+        font-family: 'budmo-jiggler';
         font-size: 2.5rem;
         margin-bottom: 20px;
         padding: 10px;
@@ -18,8 +19,9 @@
     }
     &-content{
         color: var(--color-main-light);
-        text-align: center;
+        font-family: 'beon';
         margin: 20px 40px;
+        text-align: center;
     }
     &-point{
         color: var(--color-main-alert);

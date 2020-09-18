@@ -164,15 +164,26 @@ const Game: React.FC =() : ReactElement => {
                         </h2>
                         
                             <span>    
-                                <br/> 
                                     <div className="ScoreCount-Score">
-                                        <ActionBtn> 
-                                            500
-                                        </ActionBtn>
+                                        <h3>
+                                            <span>
+                                                3500
+                                            </span>
+                                        </h3>
                                     </div>
                                 <br/>
-                                En juego
                             </span> 
+
+                        <h2>
+                            <span>E</span>
+                            <span>N</span>
+                            <span>{'   '}</span>
+                            <span>J</span>
+                            <span>U</span>
+                            <span>E</span>
+                            <span>G</span>
+                            <span>O</span>
+                        </h2>
                     </div>
                 </div>
             </div>  
