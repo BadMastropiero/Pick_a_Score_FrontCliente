@@ -1,0 +1,77 @@
+.RulesSection{
+    align-items: center;
+    border: 1px solid var(--color-main-light);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px 20px;
+    padding: 20px;
+    &-title{
+        border-bottom: 2px solid var(--color-border);
+        color: var(--color-main-alert);
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &-content{
+        color: var(--color-main-light);
+        text-align: center;
+        margin: 20px 40px;
+    }
+    &-point{
+        color: var(--color-main-alert);
+    }
+    &-alert{
+        border: 1px solid var(--color-border);
+        padding: 3px;
+        text-transform: uppercase;
+    }
+    &-examples{
+        display: flex;
+        flex-direction: row;
+    }
+    &-result{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &-teamSection{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &-teamLogo{
+        height: 65px;
+        overflow: hidden;
+        position: relative;
+        width: 65px;
+        padding-bottom: 5px;
+    }
+    &-logo{
+        border-radius: 10px;
+        display: inline;
+        height: 100%;
+        object-fit: cover;
+        width: auto;
+    }
+    &-teamName{
+        border-bottom: 2px solid var(--color-main-light);
+        color: var(--color-primary-succes);
+        margin: 20px;
+        padding: 5px;
+        text-transform: uppercase;
+    }
+}
+
+@media (max-width: 798px) {
+    .RulesSection{
+        &-examples{
+            display: flex;            
+            flex-direction: column;
+        }
+    }
+}

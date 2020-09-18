@@ -7,10 +7,13 @@ const HeroBanner: React.FC = (): ReactElement =>{
         <div className = "Banner">
             <div className="Banner-content">
                 <h1 className="Banner-contentTitle">
-                    Gambling is a  <br/> <span> Win-Win </span> Situation!!!!
+                    JUEGA EL JUEGO <br/> con <br/> <span> Pickascore </span> <br/> ¡Es muy fácil Ganar en Pickascore!
+                    
                 </h1>
                 <p className = "Banner-contentText">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, deleniti. Similique 
+                    Solo Entra, Escoge y Juega el Juego. <br/>
+                    La 1ra Quiniela Digital en la que ganas de volada hasta $4,000 x partido. <br/>
+                    Ganas $1,000 por cuarto y hasta $4,000 por partido.
                 </p>
                 <HomeInput />
             </div>

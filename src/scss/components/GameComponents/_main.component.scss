@@ -12,6 +12,7 @@
 }
 
 .Top{
+    margin-bottom: 20px;
     transform: translateX(-28px);
     width: 70%;
     @include column-center;
@@ -20,14 +21,24 @@
         @include column-center;
     }
     &-Score{
-        // @include row-center;
+        border-bottom: 1px solid var(--color-main-light);
+        border-top: 1px solid var(--color-main-light);
         display: flex;
         flex-direction: row;
-        & h1{
-            margin-left: 18px;
-            margin-right: 18px;
-        }
+        font-size: 2rem;
+        margin-top: 10px;
+        padding-bottom: 5px;
+        padding-top: 5px;
     }
+}
+
+.ScoreNumber{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20px;
+    width: 53px;
 }
 
 .Logo-img{
@@ -68,12 +79,14 @@
     color: #FFD300;
     @include column-center;
     &-Score{
-        margin-bottom: 10px;
-        @include row-center;
-        & h1 {
-            margin-left: 18px;
-            margin-right: 18px;
-        }
+        border-bottom: 1px solid var(--color-main-light);
+        border-top: 1px solid var(--color-main-light);
+        display: flex;
+        flex-direction: row;
+        font-size: 2rem;
+        margin-top: 10px;
+        padding-bottom: 5px;
+        padding-top: 5px;
     }
 }
 
@@ -82,6 +95,7 @@
     .Left{
         width: 100%;
         transform: rotate(270deg);
+        
     }
 }
 
@@ -92,7 +106,7 @@
     grid-template-rows: repeat(10, 1fr);
     grid-template-columns: repeat(10, 1fr);
     padding: 2px;
-    transform: translateX(-190px);
+    transform: translateX(-160px);
     @include borders(#020202, #141414);
 }
 
@@ -101,11 +115,48 @@
     text-decoration: double;
     text-transform: uppercase;
     transform: translateX(-120px);
-    & span {
-        color: #FFD300;
-        font-size: 1.5rem;
-
+    &-letter1{
+        
     }
+    & h2 {
+        border: 2px solid var(--color-main-light); 
+        border-radius: 10px;
+        padding: 5px;
+    }
+    & h2 span {
+        animation:  animate2 10s linear infinite;
+        display: table-cell;
+        font-size: 2.5rem;
+        font-family: 'aurach-tri';
+        // margin: 10px;
+        padding: 1.5px;
+        @keyframes animate2 {
+            0%, 100%{
+                color: var(--color-main-light);
+                filter: blur(2px);
+                text-shadow: 0 0 10px #00b3ff,
+                            0 0 20px #00b3ff,
+                            0 0 40px #00b3ff,
+                            0 0 80px #00b3ff,
+                            0 0 120px #00b3ff,
+                            // 0 0 200px #00b3ff,
+                            // 0 0 300px #00b3ff,
+                            // 0 0 400px #00b3ff,
+            }
+            50%, 50%{
+                color: #111;
+                filter: blur(0px);
+                text-shadow:  none;
+            }
+        }
+    }
+    // & h2 span:nth-child(even) {
+    //     animation-delay: 3s;
+    // }
+   
+
+
+
     &-Score{
         margin-top: 30px;;
     }

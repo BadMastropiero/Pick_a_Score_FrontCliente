@@ -31,36 +31,56 @@ const Game: React.FC =() : ReactElement => {
                             <span>Team2</span>
                         </div>
                         <div className="Top-Score">
-                                <h1>
-                                    0
-                                </h1>
-                                <h1>
-                                    1
-                                </h1>
-                                <h1>
-                                    2
-                                </h1>
-                                <h1>
-                                    3
-                                </h1>
-                                <h1>
-                                    4
-                                </h1>
-                                <h1>
-                                    5
-                                </h1>
-                                <h1>
-                                    6
-                                </h1>
-                                <h1>
-                                    7
-                                </h1>
-                                <h1>
-                                    8
-                                </h1>
-                                <h1>
-                                    9
-                                </h1>
+                                <div className="ScoreNumber">
+                                    <span>
+                                        0
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        1
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        2
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        3
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        4
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        5
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        6
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        7
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        8
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        9
+                                    </span>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -73,58 +93,90 @@ const Game: React.FC =() : ReactElement => {
                             <span>Team1</span>
                         </div>
                         <div className="Left-Score">
-                                <h1>
-                                    9
-                                </h1>
-                                <h1>
-                                    8
-                                </h1>
-                                <h1>
-                                    7
-                                </h1>
-                                <h1>
-                                    6
-                                </h1>
-                                <h1>
-                                    5
-                                </h1>
-                                <h1>
-                                    4
-                                </h1>
-                                <h1>
-                                    3
-                                </h1>
-                                <h1>
-                                    2
-                                </h1>
-                                <h1>
-                                    1
-                                </h1>
-                                <h1>
-                                    0
-                                </h1>
+                        <div className="ScoreNumber">
+                                    <span>
+                                        9
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        8
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        7
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        6
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        5
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        4
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        3
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        2
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        1
+                                    </span>
+                                </div>
+                                <div className="ScoreNumber">
+                                <span>
+                                        0
+                                    </span>
+                                </div>
                         </div>
                     </div>
                     <div className="Body">
                         {renderCells()}
                     </div>
                     <div className="ScoreCount">
-                        <span>
-                            Actualmente: 
-                            <br/> 
-                                <div className="ScoreCount-Score">
-                                    <ActionBtn> 
-                                        500
-                                    </ActionBtn>
-                                </div>
-                            <br/>
-                            En juego
-                        </span>
+                        <h2>
+                            <span>A</span>
+                            <span>C</span>
+                            <span>T</span>
+                            <span>U</span>
+                            <span>A</span>
+                            <span>L</span>
+                            <span>M</span>
+                            <span>E</span>
+                            <span>N</span>
+                            <span>T</span>
+                            <span>E</span>
+                        </h2>
+                        
+                            <span>    
+                                <br/> 
+                                    <div className="ScoreCount-Score">
+                                        <ActionBtn> 
+                                            500
+                                        </ActionBtn>
+                                    </div>
+                                <br/>
+                                En juego
+                            </span> 
                     </div>
                 </div>
             </div>  
             </div> 
-           
         </Fragment>
     )
 }

@@ -42,5 +42,14 @@
         letter-spacing: 2px;
         margin-right: 1rem;
         text-transform: uppercase;
+        & span{
+            cursor: pointer;
+            transition: .3s;
+            padding: 5px;
+            &:hover {
+                transition: .3s;
+                border-bottom: 2px solid var(--color-border);
+            }
+        }
     }
 }

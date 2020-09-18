@@ -3,6 +3,7 @@
 @import './base/base';
 @import './mixins/responsive';
 @import './icons/icons';
+@import './fonts/fonts';
 
 // pages
 @import './pages/home-page';
@@ -10,6 +11,7 @@
 @import './pages/select-page';
 @import './pages/register&checkout-page';
 @import './pages/confirmation-page';
+@import './pages/info-page';
 
 // components
 @import './components/navbar.component';

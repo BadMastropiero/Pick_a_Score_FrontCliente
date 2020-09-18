@@ -71,16 +71,7 @@ export const HomeInput = () => {
         }  
     }
      
-     const inputValidation = (e: ChangeEvent<HTMLInputElement>) => {
-        const { type, value } = e.target
-        if (type === "password") {
-            dispatch({field:"password",value:value})
-            /*setFormValid({
-//                ...formValid,
-                [name]: minLengthValidation(e.target, 6)
-            })*/
-        }
-    };
+
 
     return (
         <div className="animated-form">
@@ -92,7 +83,6 @@ export const HomeInput = () => {
                         placeholder="Your Password"
                         id="password"
                         className="password"
-                        onChange={inputValidation}
                     />
                     <div className="Banner-btn">
                         <ActionBtn>

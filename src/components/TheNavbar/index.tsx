@@ -69,16 +69,16 @@ const Navbar: React.FC = (): ReactElement => {
                 </div>
                 <i className="Logo-icon"></i>
                 <ActionBtn>
-                    <Link className="ActionBtn-name" to={AuthRoutes.SELECT}> Select a Game</Link>
+                    <Link className="ActionBtn-name" to={AuthRoutes.SELECT}> Acceso a las Quinelas</Link>
                 </ActionBtn>
             </div>
             <div className="Header-right">
                 <i className="Notification-icon"></i>
-                <div className="Header-user">
+                {/* <div className="Header-user">
                     <span>UserName</span>
-                </div>
+                </div> */}
                 <div className="Header-user">
-                    <span onClick={openModal}>Register</span>
+                    <span onClick={openModal}>Registrarse</span>
                 </div>
             </div>
         </div>

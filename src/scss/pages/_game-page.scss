@@ -6,14 +6,13 @@
     padding-top: 50px;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 1080px) {
     .GamePage{   
         display: flex;
         flex-direction: column;
         height: 65rem;
         justify-content: center;
         padding: 50px;
-        
     }
     .GameSection{
         display: block;

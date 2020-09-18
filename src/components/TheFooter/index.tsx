@@ -1,4 +1,6 @@
-import React, { Fragment, ReactElement } from 'react'
+import React, { Fragment, ReactElement } from 'react';
+import { Link } from 'react-router-dom';
+import {NonAuthRoutes} from '../../types/enums/app-routes.enum';
 
 import ActionBtn from '../ActionBtn'
 
@@ -31,17 +33,15 @@ const TheFooter: React.FC = (): ReactElement => {
                 </div>
                 <div className="Footer-right">
                     <h3>
-                        Some important info
+                        Juega el Juego <br/> con <br/> Pickascore
                     </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sapiente omnis quis. 
-                        Natus doloremque dolores modi placeat minima perspiciatis ad aut numquam illum. 
-                        Voluptatum rerum labore corrupti, error laudantium inventore.
-                    </p>
                     <div className="Footer-btn">
-                        <ActionBtn>
-                            Read
-                        </ActionBtn>
+                        <Link to={NonAuthRoutes.INFO}>
+                            <ActionBtn>
+                                Conoce las reglas
+                            </ActionBtn>
+                        </Link>
+                        
                     </div>
                 </div>
             </div>
