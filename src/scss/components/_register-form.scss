@@ -1,0 +1,22 @@
+.RegisterForm{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    &-label{
+        margin-top: 10px;
+    }
+    &-input{
+        width: 80%;
+    }
+    &-submit{
+        color: orangered;
+        cursor: pointer;
+        margin: 20px;
+    }
+    & h4 {
+        color: orangered;
+        font-size: 1.2rem;
+    }
+}

@@ -1,12 +1,13 @@
 import React, { ReactElement, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthRoutes, NonAuthRoutes } from '../../types/enums/app-routes.enum';
-import { registerUser } from '../../API/users'
-import {scrollToTop} from '../../utils'
+import { registerUser } from '../../API/users';
+import Swal from 'sweetalert2';
+import {scrollToTop} from '../../utils';
 
 import ActionBtn from '../ActionBtn';
 import LOGO from '../../assets/logos/LOGO_V1.png';
-import UserRegisterPage from '../UserRegisterPage'
+import UserRegisterPage from '../UserRegisterModal'
 
 const Navbar: React.FC = (): ReactElement => {
 
@@ -27,13 +28,43 @@ const Navbar: React.FC = (): ReactElement => {
         
         registerUser(data).then(userData => {
             if (userData.errors) {
-                alert('Error al registrar, email ya existente')
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 8000,
+                    timerProgressBar: true,
+                    onOpen: (toast) => {
+                      toast.addEventListener('mouseenter', Swal.stopTimer)
+                      toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                  })
+                  Toast.fire({
+                    icon: 'error',
+                    title: 'Error al crear registro'
+                  })
                 return
+            } else {
+                const Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 8000,
+                  timerProgressBar: true,
+                  onOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                  }
+                })
+          
+                Toast.fire({
+                  icon: 'success',
+                  title: 'Registrado Correctamente'
+                })
+                closeModal()
             }
-            alert('Registrado correctamente')
-            closeModal()
         }).catch(err => {
-            alert('Error al registrar')
+            // alert('Error al registrar')
             console.log(err)
         })
     }
@@ -57,6 +88,7 @@ const Navbar: React.FC = (): ReactElement => {
         oldValues.onSubmit = submitHandler
         let newValues = { ...oldValues }
         setModalProps(newValues)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
