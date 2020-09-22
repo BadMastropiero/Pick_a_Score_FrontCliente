@@ -11,31 +11,32 @@
         background: #0C0910;
         box-shadow: -1px 14px 34px 8px rgba(0,0,0,0.75);
         border-radius: 10px 10px 0 0;
-        color: aliceblue;
+        color: var(--color-main-light);
         display: flex;
         height: 3.5rem;
         justify-content: space-around;
         padding: px;
         position: sticky;
         top: 0;
+        text-transform: uppercase;
         z-index: var(--z-fixed);
         & .CloseBtn {
             background: transparent;
             border: none;
-            color: aliceblue;
+            color: var(--color-main-light);
             cursor: pointer;
             font-size: 2rem;
         }
     }
     &-body{
         align-items: center;
-        background: #390040;
+        background: var(--color-secondary-dark);
         display: flex;
         flex-direction: column;
         height: 70vh;
         justify-content: center;
         & span {
-            color:#F5B400;
+            color: var(--color-main-alert);
             font-size: 2rem;
             font-weight: 700;
             text-transform: uppercase;

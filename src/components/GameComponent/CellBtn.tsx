@@ -27,7 +27,7 @@ const CellBtn: React.FC<CellBtnProp> = ({row, col}): ReactElement => {
                     overlayClassName="Overlay"
                 > 
                     <div className="Modal-header">
-                        <h2>Title here</h2>
+                        <h2>Comprar</h2>
                         <button className="CloseBtn" onClick={()=> setModalIsOpen(!modalIsOpen)}>X</button>
                     </div>
                     <div className="Modal-body">
