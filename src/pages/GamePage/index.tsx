@@ -13,7 +13,7 @@ const GamePage: React.FC = (): ReactElement => {
         getBetsByGame(gameId).then(bets => {
             console.log(bets)
             bets?.map((item:any) => {
-                alert(JSON.stringify(item))
+                // alert(JSON.stringify(item))
             })
         })
     },[])
