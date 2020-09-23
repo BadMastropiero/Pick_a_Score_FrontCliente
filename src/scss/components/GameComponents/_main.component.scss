@@ -2,12 +2,12 @@
 @import '../../mixins/align';
 
 .Game{
-    background: var(--color-secondary-dark);
+    background-color: rgba(0,0,0,.9);
     border-radius: 10px;
     height: 1000px;
     padding: 30px;
     width: 1080px;
-    @include borders (var(--color-main-alert), var(--color-main-alert));
+    @include borders (var(--color-primary-succes), var(--color-primary-succes));
     @include column-center
 }
 

@@ -43,9 +43,9 @@ const PickaScore: React.FC = (): ReactElement => {
             path = {AuthRoutes.CONFIRMATION}
             Component={ConfirmationPage}
           />
-          <AuthRoute 
+          <Route 
             path = {NonAuthRoutes.INFO}
-            Component = {InfoPage}
+            component = {InfoPage}
           />
         </Switch>
         <TheFooter/>

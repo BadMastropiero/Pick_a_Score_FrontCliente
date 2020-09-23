@@ -36,7 +36,8 @@ const CellBtn: React.FC<CellBtnProp> = ({ row, col }): ReactElement => {
                     </span>
                     <div className="Modal-btn">
                         <ActionBtn>
-                            <Link onClick={scrollToTop} to={AuthRoutes.REGISTER} className="ActionBtn-name" > comprar</Link>
+                            {/* <Link onClick={scrollToTop} to={AuthRoutes.REGISTER} className="ActionBtn-name" > comprar</Link> */}
+                            comprar
                         </ActionBtn>
                     </div>
                 </div>

@@ -102,7 +102,7 @@ const Navbar: React.FC = (): ReactElement => {
                 </div>
                 <i className="Logo-icon"></i>
                 <ActionBtn>
-                    <Link onClick={scrollToTop} className="ActionBtn-name" to={AuthRoutes.SELECT}> Acceso a las Quinelas</Link>
+                    <Link onClick={scrollToTop} className="ActionBtn-name" to={AuthRoutes.SELECT}> Acceso a las Quinielas</Link>
                 </ActionBtn>
             </div>
             <div className="Header-right">

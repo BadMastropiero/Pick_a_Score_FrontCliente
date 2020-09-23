@@ -9,11 +9,8 @@ import img2 from '../../assets/logos/NFLTeams/San_Francisco_49ers.png';
             <h3 className="RulesSection-title">
                 Conoce las Reglas de Pickascore
             </h3>
-            
+            <span className="RulesSection-teamName">Es muy fácil Ganar en Pickascore! Solo Entra, Escoge y Juega el Juego.</span>
             <p className="RulesSection-content">
-                
-                
-                <br/>
                 <span className="RulesSection-point">1.</span> Cada <strong className="RulesSection-alert">cuadro</strong> contiene una combinación de 2 dígitos, 
                 la cual llamaremos Score.
                 <br/>
@@ -31,11 +28,10 @@ import img2 from '../../assets/logos/NFLTeams/San_Francisco_49ers.png';
             </p>
             <br/>
             <br/>
+            <strong className="RulesSection-alert"> <span className="RulesSection-point">ejemplo</span></strong>
+            <span  className="RulesSection-teamName"> En superbowl 54, en donde 49ers es el equipo visitante y Chiefs el equipo local. </span>
             <div className="RulesSection-examples">           
                 <p className="RulesSection-content">
-                    <strong className="RulesSection-alert"> <span className="RulesSection-point">ejemplo</span></strong>
-                    <br/>
-                    <br/>
                     <span className="RulesSection-point">A.</span> Si el marcador fuera...
                     <div className="RulesSection-result">
                         <div className="RulesSection-teamSection">
@@ -58,9 +54,6 @@ import img2 from '../../assets/logos/NFLTeams/San_Francisco_49ers.png';
                 <br/>
                 <br/>
                 <p className="RulesSection-content">
-                    <strong className="RulesSection-alert"> <span className="RulesSection-point">ejemplo</span></strong>
-                    <br/>
-                    <br/>
                     <span className="RulesSection-point">B.</span> Si el marcador fuera...
                     <div className="RulesSection-result">
                         <div className="RulesSection-teamSection">
@@ -83,9 +76,6 @@ import img2 from '../../assets/logos/NFLTeams/San_Francisco_49ers.png';
                 <br/>
                 <br/>
                 <p className="RulesSection-content">
-                <strong className="RulesSection-alert"> <span className="RulesSection-point">ejemplo</span></strong>
-                <br/>
-                <br/>
                 <span className="RulesSection-point">C.</span> Si el marcador fuera...
                 <div className="RulesSection-result">
                     <div className="RulesSection-teamSection">
@@ -133,7 +123,7 @@ import img2 from '../../assets/logos/NFLTeams/San_Francisco_49ers.png';
             <span className="RulesSection-point">8.</span> El valor de cada Score es de 50.00 MXN.
             <br/>
             <br/>
-            <span className="RulesSection-point">9.</span>	En Pickascore con $50.00 puedes ganar hasta $4000. Es decir el momio de tu score es hasta de +8000.
+            <span className="RulesSection-point">9.</span>	En Pickascore con $50.00 puedes ganar hasta $4000. Es decir, el momio de tu score es hasta de +8000.
             </p>
         </section>
     )

@@ -8,7 +8,7 @@
     animation-play-state: running;
     animation-timing-function: ease-in-out;
     align-items: center;
-    background-image: url(../../assets/imgs/welcome_banner1.jpg);
+    background-image: url(../../assets/imgs/welcome_banner1.webp);
     background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,40 +22,40 @@
     z-index: var(--z-tooltip);
     @keyframes animate {
         8%{
-            background-image: url(../../assets/imgs/welcome_banner2.jpg);
+            background-image: url(../../assets/imgs/welcome_banner2.webp);
         }
         16%{
-            background-image: url(../../assets/imgs/welcome_banner3.jpg);
+            background-image: url(../../assets/imgs/welcome_banner3.webp);
         }
         24%{
-            background-image: url(../../assets/imgs/welcome_banner4.jpg);
+            background-image: url(../../assets/imgs/welcome_banner4.webp);
         }
         32%{
-            background-image: url(../../assets/imgs/welcome_banner5.jpg);
+            background-image: url(../../assets/imgs/welcome_banner5.webp);
         }
         40%{
-            background-image: url(../../assets/imgs/welcome_banner6.jpg);
+            background-image: url(../../assets/imgs/welcome_banner6.webp);
         }
         48%{
-            background-image: url(../../assets/imgs/welcome_banner7.jpg);
+            background-image: url(../../assets/imgs/welcome_banner7.webp);
         }
         56%{
-            background-image: url(../../assets/imgs/welcome_banner8.jpg);
+            background-image: url(../../assets/imgs/welcome_banner8.webp);
         }
         64%{
-            background-image: url(../../assets/imgs/welcome_banner9.jpg);
+            background-image: url(../../assets/imgs/welcome_banner9.webp);
         }
         72%{
-            background-image: url(../../assets/imgs/welcome_banner10.jpg);
+            background-image: url(../../assets/imgs/welcome_banner10.webp);
         }
         80%{
-            background-image: url(../../assets/imgs/welcome_banner11.jpg);
+            background-image: url(../../assets/imgs/welcome_banner11.webp);
         } 
         88%{
-            background-image: url(../../assets/imgs/welcome_banner12.jpg);
+            background-image: url(../../assets/imgs/welcome_banner12.webp);
         } 
         100%{
-            background-image: url(../../assets/imgs/welcome_banner13.jpg);
+            background-image: url(../../assets/imgs/welcome_banner13.webp);
         }
     }
     &-content{
@@ -67,7 +67,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 80px;
+        margin-top: 10px;
         max-width: 600px;
         padding: 15px;
         position: absolute;
@@ -83,6 +83,7 @@
         & h1 {
             color: #F5F3F5;
             font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
             font-size: 2em;
             text-align: center;
             & span {
@@ -94,7 +95,8 @@
         }
         & p {
             font-family: 'Roboto Condensed', sans-serif;
-            margin: 40px;
+            font-size: 1.3rem;
+            margin: 20px;
             text-align: center;
         }
     }
@@ -105,4 +107,8 @@
         padding-right: 30px;
     }
 
+}
+
+.btn-submit{
+    cursor: pointer;
 }

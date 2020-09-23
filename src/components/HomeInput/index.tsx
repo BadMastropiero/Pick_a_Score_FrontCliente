@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useReducer, Reducer, ChangeEvent } from 'react'
 // import {minLengthValidation} from '../../API/form-validation'
 import { signIn } from '../../API/users';
@@ -78,10 +79,10 @@ export const HomeInput = () => {
     <div className="animated-form">
       <div className="form-group">
         <form name="HomeInput" className='form' >
-          <label>Password</label>
+          <label>Introduzca Pin</label>
           <input
             type="password"
-            placeholder="Your Password"
+            placeholder="CÓDIGO DE INVITADO"
             id="password"
             className="password"
           />
@@ -89,9 +90,9 @@ export const HomeInput = () => {
             <ActionBtn>
               <input
                 type='submit'
-                value='Iniciar sesion'
+                value='Iniciar sesión'
                 onClick={(e) => { e.preventDefault(); handlerOnClick() }}
-                className='signin-submit'
+                className="btn-submit"
               />
             </ActionBtn>
           </div>

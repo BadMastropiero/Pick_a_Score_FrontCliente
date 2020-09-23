@@ -1,9 +1,15 @@
 .GameSection{
     align-items: center;
+    background-image: url(../../assets/imgs/welcome_banner4.webp);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 30px;
     padding-top: 50px;
+    
 }
 
 @media (max-width: 1080px) {

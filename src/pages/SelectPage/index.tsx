@@ -49,7 +49,7 @@ const SelectPage: React.FC = (): ReactElement => {
             <Fragment>
 
                 <div className="Features-content">
-                    <h2>Pick one of this</h2>
+                    <h2>ESCOGE TU QUINIELA Y GANA </h2>
                 </div>
                 <section className="Features">
                     {games?.map((item: any) => {
