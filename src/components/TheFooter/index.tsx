@@ -13,7 +13,7 @@ const TheFooter: React.FC = (): ReactElement => {
                     <h4>
                         Todos los pagos se realizan a través de Paypal
                     </h4>
-                    <i className = "Paypal-icon"></i>
+                    <i className = "Paypal-icon"></i> 
                     {/* <ul className="Footer-contact">
                         <li>
                             <i className = "Facebook-icon"></i>
