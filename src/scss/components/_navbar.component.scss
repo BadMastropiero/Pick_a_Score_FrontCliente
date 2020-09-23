@@ -1,6 +1,6 @@
 .Header{
     align-items: center;
-    background: linear-gradient(90deg, rgba(43,45,66,1) 32%, rgba(21,28,40,1) 68%);
+    background: #F5F5F5;
     box-shadow: -1px 14px 34px 8px rgba(0,0,0,0.75);
     display: flex;
     height: 4.5rem;
@@ -38,7 +38,7 @@
         display: flex;
     }
     &-user{
-        color: #F5F3F5;
+        color: #E07000;
         letter-spacing: 2px;
         margin-right: 1rem;
         text-transform: uppercase;

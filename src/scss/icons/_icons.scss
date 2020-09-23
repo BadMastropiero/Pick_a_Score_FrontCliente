@@ -62,3 +62,16 @@
         width: 140px;
     }
 }
+
+.Paypal-icon{
+    &::before {
+        background-image: url(../../assets/icons/paypal.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        content: "";
+        display: block;
+        height: 100px;
+        width: 100px;
+    }
+}

@@ -10,10 +10,11 @@ const TheFooter: React.FC = (): ReactElement => {
         <Fragment>
             <div className="Footer">
                 <div className="Footer-left">
-                    <h2>
-                        Contacts:
-                    </h2>
-                    <ul className="Footer-contact">
+                    <h4>
+                        Todos los pagos se realizan a través de Paypal
+                    </h4>
+                    <i className = "Paypal-icon"></i>
+                    {/* <ul className="Footer-contact">
                         <li>
                             <i className = "Facebook-icon"></i>
                             <a href="/">Facebook</a>
@@ -30,7 +31,7 @@ const TheFooter: React.FC = (): ReactElement => {
                         <i className = "Instagram-icon"></i>
                             <a href="/">Instagram</a>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
                 <div className="Footer-right">
                     <h3>

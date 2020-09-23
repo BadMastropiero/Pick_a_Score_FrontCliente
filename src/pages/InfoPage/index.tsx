@@ -9,9 +9,10 @@ import img2 from '../../assets/logos/NFLTeams/San_Francisco_49ers.png';
             <h3 className="RulesSection-title">
                 Conoce las Reglas de Pickascore
             </h3>
+            
             <p className="RulesSection-content">
-                <h3>Es muy fácil Ganar en Pickascore! Solo Entra, Escoge y Juega el Juego!</h3>
-                <br/>
+                
+                
                 <br/>
                 <span className="RulesSection-point">1.</span> Cada <strong className="RulesSection-alert">cuadro</strong> contiene una combinación de 2 dígitos, 
                 la cual llamaremos Score.
@@ -110,12 +111,14 @@ import img2 from '../../assets/logos/NFLTeams/San_Francisco_49ers.png';
             <p className="RulesSection-content">
                 No importa el Marcador, si este fuera, <strong className="RulesSection-alert"> <span className="RulesSection-point"> 12 vs 29 </span> </strong>  
                 ó <strong className="RulesSection-alert"> <span className="RulesSection-point"> 22 vs 09 </span> </strong>,  etc. La combinación ganadora sería 
-                la misma <strong className="RulesSection-alert"> <span className="RulesSection-point"> (2 – 9)</span> </strong>, ya que sigue siendo la 
+                la misma <strong className="RulesSection-alert"> <span className="RulesSection-point"> (2 – 9)</span> </strong>, 
+                
+                ya que sigue siendo la 
                 misma terminación de los puntos por equipo en el marcador. ( <strong className="RulesSection-alert"> <span className="RulesSection-point"> 2 </span> </strong> 
                 de 49ers y <strong className="RulesSection-alert"> <span className="RulesSection-point"> 9 </span> </strong>  de Chiefs).
             </p>
             <br/>
-            <br/>
+            
             <p className="RulesSection-content">
             <span className="RulesSection-point">5.</span> Tu Score juega una sola oportunidad por cuarto. Pudiendo comprar todos los scores que quieras.
             <br/>
