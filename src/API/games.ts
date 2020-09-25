@@ -16,7 +16,9 @@ export function getActiveGames() {
             return response.json();
         })
         .then(result => {
+            // alert(JSON.stringify(result.data))
             return result.data;
+            
         })
         .catch(error => {
             console.log(error)
@@ -38,6 +40,7 @@ export function getBetsByGame(gameId: string) {
     }
     return fetch(url, params)
         .then(response => {
+            alert(JSON.stringify(response))
             return response.json();
         })
         .then(result => {

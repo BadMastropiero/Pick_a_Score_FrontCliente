@@ -13,7 +13,9 @@ import {
     Link,
     useParams
 } from "react-router-dom";
-import GamePage from '../GamePage'
+
+import GamePage from '../GamePage';
+// import Navbar from '../../components/TheNavbar';
 
 const SelectPage: React.FC = (): ReactElement => {
     const [games, setGames] = useState([])
@@ -34,7 +36,12 @@ const SelectPage: React.FC = (): ReactElement => {
                 <section className="Features">
                     {games?.map((item: any) => {
                         return (
-                            <Link key={item._id} onClick={scrollToTop} to={AuthRoutes.GAME + '/' + item._id}>
+                            <Link key={item._id} 
+                                  onClick={scrollToTop} 
+                                  to={AuthRoutes.GAME + '/' + 
+                                  item._id + '/' + 
+                                  item.teams.team1.name + '/' + 
+                                  item.teams.team2.name}>
                                 <FeaturesCard source={Feature1} alt={""} teams={item.teams}  description={item.description} />
                             </Link>
                         )
@@ -46,11 +53,12 @@ const SelectPage: React.FC = (): ReactElement => {
 
     return (
         <Router>
+            {/* <Navbar/> */}
             <Switch>
                 <Route path={AuthRoutes.SELECT}>
                     {select}
                 </Route>
-                <Route path={AuthRoutes.GAME + "/:gameId"} >
+                <Route path={AuthRoutes.GAME + "/:id"} >
                     <GamePage />
                 </Route>
             </Switch>

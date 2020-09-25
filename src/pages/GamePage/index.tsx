@@ -1,13 +1,14 @@
-import React, { Fragment, ReactElement,useEffect } from 'react'
-import { getBetsByGame } from '../../API/games'
-import Game from '../../components/GameComponent/MainComponent'
+import React, { Fragment, ReactElement,useEffect } from 'react';
+import { getBetsByGame } from '../../API/games';
+import Game from '../../components/GameComponent/MainComponent';
+
 import {
     useParams
 } from "react-router-dom";
 
 const GamePage: React.FC = (): ReactElement => {
     
-    let { gameId } = useParams<any>();
+    let { gameId, hostTeamName, visitTeamName  } = useParams<any>();
 
     useEffect(()=>{
         getBetsByGame(gameId).then(bets => {
@@ -17,6 +18,8 @@ const GamePage: React.FC = (): ReactElement => {
             })
         })
     },[])
+
+
 
     return (
         <Fragment>
