@@ -2,20 +2,20 @@ import React, { Fragment, ReactElement,useEffect } from 'react';
 import { getBetsByGame } from '../../API/games';
 import Game from '../../components/GameComponent/MainComponent';
 
-import {
-    useParams
-} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const GamePage: React.FC = (): ReactElement => {
     
-    let { gameId, hostTeamName, visitTeamName  } = useParams<any>();
+    let { gameId } = useParams<any>();
 
     useEffect(()=>{
         getBetsByGame(gameId).then(bets => {
-            console.log(bets)
+            console.log(gameId,bets)
             bets?.map((item:any) => {
                 alert(JSON.stringify(item))
             })
+        }).catch(err => {
+            console.error(err)
         })
     },[])
 
