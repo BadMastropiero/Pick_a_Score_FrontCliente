@@ -13,13 +13,13 @@
         cursor: pointer;
         display: inline;
         height: 100%;
-        margin-right: 30px;
+        margin: 12px;
         margin-top: 10px;
         object-fit: cover;
         transition: .6s;
         width: auto;
         &:hover{
-            transform: scale(1.38);
+            transform: scale(1.30);
         }
     }
     &-img{

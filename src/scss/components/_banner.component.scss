@@ -67,9 +67,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 10px;
+        margin: 10px;
         max-width: 600px;
-        padding: 15px;
+        // padding: 15px;
         position: absolute;
         transition: .6s;
         @keyframes beat {

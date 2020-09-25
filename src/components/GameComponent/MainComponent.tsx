@@ -1,11 +1,12 @@
-import React, { Fragment, ReactElement, useState } from 'react'
+import React, { Fragment, ReactElement, useState } from 'react';
 
 import {generateCells} from '../../utils' ;
 import CellBtn from '../GameComponent/CellBtn';
-import ActionBtn from '../ActionBtn';
 
 import Team1 from '../../assets/logos/NFLTeams/team1.png'
 import Team2 from '../../assets/logos/NFLTeams/team2.png';
+
+
 
 
 const Game: React.FC =() : ReactElement => {
