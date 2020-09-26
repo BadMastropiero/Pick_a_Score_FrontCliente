@@ -9,7 +9,7 @@ import ActionBtn from '../ActionBtn';
 import LOGO from '../../assets/logos/LOGO_V1.png';
 import UserRegisterPage from '../UserRegisterModal'
 
-const Navbar: React.FC = (): ReactElement => {
+const Navbar: React.FC = (props): ReactElement => {
 
     const modalPropsDefault = {
         isOpen: false,
@@ -102,7 +102,7 @@ const Navbar: React.FC = (): ReactElement => {
                 </div>
                 <i className="Logo-icon"></i>
                 <ActionBtn>
-                    <Link onClick={scrollToTop} className="ActionBtn-name" to={AuthRoutes.SELECT}> Acceso a las Quinielas</Link>
+                    <a href={AuthRoutes.SELECT} className="ActionBtn-name"> Acceso a las Quinielas</a>
                 </ActionBtn>
             </div>
             <div className="Header-right">

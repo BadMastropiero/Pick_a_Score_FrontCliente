@@ -6,10 +6,10 @@ import {
     useParams
 } from "react-router-dom";
 
-const GamePage: React.FC = (): ReactElement => {
-    
+const GamePage: React.FC = (props): ReactElement => {
+    console.log(props)
     let { gameId, hostTeamName, visitTeamName  } = useParams<any>();
-
+    console.log(JSON.stringify(hostTeamName))
     useEffect(()=>{
         getBetsByGame(gameId).then(bets => {
             console.log(bets)
@@ -24,7 +24,7 @@ const GamePage: React.FC = (): ReactElement => {
     return (
         <Fragment>
             <div className="GameSection">
-                <Game/>
+                <Game hostTeamName={hostTeamName} visitTeamName={visitTeamName}/>
             </div>
         </Fragment>
     )
