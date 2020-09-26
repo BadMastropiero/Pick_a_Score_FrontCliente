@@ -15,7 +15,6 @@ import {
 } from "react-router-dom";
 
 import GamePage from '../GamePage';
-// import Navbar from '../../components/TheNavbar';
 
 const SelectPage: React.FC = (): ReactElement => {
     const [games, setGames] = useState([])
@@ -52,7 +51,6 @@ const SelectPage: React.FC = (): ReactElement => {
 
     return (
         <Router>
-            {/* <Navbar/> */}
             <Switch>
                 <Route path={AuthRoutes.SELECT}>
                     {select}
