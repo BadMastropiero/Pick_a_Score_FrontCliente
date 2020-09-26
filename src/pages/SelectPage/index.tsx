@@ -38,10 +38,7 @@ const SelectPage: React.FC = (): ReactElement => {
                         return (
                             <Link key={item._id} 
                                   onClick={scrollToTop} 
-                                  to={AuthRoutes.GAME + '/' + 
-                                  item._id + '/?team1=' + 
-                                  item.teams.team1.name + '/?team2=' + 
-                                  item.teams.team2.name}>
+                                  to={AuthRoutes.GAME + '/' + item._id}>
                                 <FeaturesCard source={Feature1} alt={""} teams={item.teams}  description={item.description} />
                             </Link>
                         )
@@ -57,9 +54,11 @@ const SelectPage: React.FC = (): ReactElement => {
         <Router>
             {/* <Navbar/> */}
             <Switch>
-                <Route path={AuthRoutes.SELECT} component={select} />
-                <Route path={AuthRoutes.GAME + "/:id"}>
-                    <GamePage  />
+                <Route path={AuthRoutes.SELECT}>
+                    {select}
+                </Route>
+                <Route path={AuthRoutes.GAME + "/:gameId"} >
+                    <GamePage />
                 </Route>
             </Switch>
         </Router>

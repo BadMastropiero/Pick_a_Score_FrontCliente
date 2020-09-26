@@ -7,18 +7,18 @@ import Team1 from '../../assets/logos/NFLTeams/team1.png'
 import Team2 from '../../assets/logos/NFLTeams/team2.png';
 import { useParams } from 'react-router-dom';
 
-interface GameProps {
-    hostTeamName: string
-    visitTeamName: string
-}
+// interface GameProps {
+//     hostTeamName: string
+//     visitTeamName: string
+// }
 
 
-const Game: React.FC<GameProps> =(props: GameProps) : ReactElement => {
+const Game: React.FC =() : ReactElement => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [cells, setCells] = useState(generateCells());
 
     // let {hostTeamName} = useParams<any>()
-    console.log(props.hostTeamName)
+    
     const renderCells = (): React.ReactNode => {
         return cells.map((row, rowIndex) => row.map((cell, colIndex) => 
             <CellBtn row={rowIndex} col={colIndex} 
@@ -35,7 +35,7 @@ const Game: React.FC<GameProps> =(props: GameProps) : ReactElement => {
                            <img className="Logo-img" src={Team1} alt=""/>
                         </div>    
                         <div className="Team-name">
-                            <span>{props.hostTeamName}</span>
+                            <span></span>
                         </div>
                         <div className="Top-Score">
                                 <div className="ScoreNumber">
@@ -97,7 +97,7 @@ const Game: React.FC<GameProps> =(props: GameProps) : ReactElement => {
                             <img className="Logo-img" src={Team2} alt=""/>
                         </div> 
                         <div className="Team-name">
-                            <span>{props.visitTeamName}</span>
+                            <span></span>
                         </div>
                         <div className="Left-Score">
                         <div className="ScoreNumber">

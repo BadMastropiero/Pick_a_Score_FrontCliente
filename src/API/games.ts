@@ -17,11 +17,14 @@ export function getActiveGames() {
         })
         .then(result => {
             // alert(JSON.stringify(result.data))
+            if(result.code!=200)
+                throw new Error(result.errors)
+
             return result.data;
             
         })
         .catch(error => {
-            console.log(error)
+            throw error
         })
 }
 
@@ -40,13 +43,17 @@ export function getBetsByGame(gameId: string) {
     }
     return fetch(url, params)
         .then(response => {
-            alert(JSON.stringify(response))
+            //alert(JSON.stringify(response))
             return response.json();
         })
         .then(result => {
+
+            if(result.code != 200)
+                throw new Error(result.errors)
+
             return result.data;
         })
         .catch(error => {
-            console.log(error)
+            throw error
         })
 }
