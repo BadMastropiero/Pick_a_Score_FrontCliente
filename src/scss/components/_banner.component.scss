@@ -69,7 +69,7 @@
         justify-content: center;
         margin: 10px;
         max-width: 600px;
-        // padding: 15px;
+        // padding: 25px;
         position: absolute;
         transition: .6s;
         @keyframes beat {
@@ -87,9 +87,11 @@
             font-size: 2em;
             text-align: center;
             & span {
+                border-bottom: 2px solid var(--color-main-alert);
                 color: var(--color-main-alert);
                 font-family: 'budmo-jiggler';
                 font-size: 1.2em;
+                
                 text-transform: uppercase;
             }
         }
@@ -111,4 +113,38 @@
 
 .btn-submit{
     cursor: pointer;
+}
+
+.UserPin{
+    color: var(--color-main-alert);
+    text-transform: uppercase;
+    text-align: center;
+
+    & strong{
+        border: 1px solid var(--color-main-alert);
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        padding: 3px;
+
+    }
+}
+
+@media (max-width: 380px) {
+    .Banner{
+        &-content{
+            margin-top: 15px;
+            padding: 15px;
+            & h1 {
+                font-size: 1.5em;
+            }
+            & p {
+                font-size: .8em;
+                margin: 10px;
+            }
+        }
+        &-btn{
+            margin: 10px;
+            padding-right: 45px;
+        }
+    }
 }

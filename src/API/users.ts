@@ -1,4 +1,5 @@
 import { basePath } from '../API/config';
+import {openInNewTab} from '../utils/index';
 
 export function signIn(data: any) {
     const url = `${basePath}/auth/signIn`;
@@ -57,10 +58,7 @@ export function checkOut() {
         })
 }
 
-function openInNewTab(url: string) {
-    const win: any = window.open(url, '_blank');  // TODO change the open in new tab for href
-    win.focus();
-}
+
 
 export function registerUser(data: any) {
     const url = `${basePath}/user/user/`;

@@ -2,8 +2,11 @@ import React, { ReactElement, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthRoutes, NonAuthRoutes } from '../../types/enums/app-routes.enum';
 import { registerUser } from '../../API/users';
+import {logout} from '../../API/auth'
 import Swal from 'sweetalert2';
-import {scrollToTop} from '../../utils';
+import {scrollToTop, openInNewTab} from '../../utils';
+import {USER_DATA, USER_INFO} from '../../constants/index';
+
 
 import ActionBtn from '../ActionBtn';
 import LOGO from '../../assets/logos/LOGO_V1.png';
@@ -27,6 +30,7 @@ const Navbar: React.FC = (props): ReactElement => {
     const submitHandler = (data: any) => {
         
         registerUser(data).then(userData => {
+            
             if (userData.errors) {
                 const Toast = Swal.mixin({
                     toast: true,
@@ -62,7 +66,10 @@ const Navbar: React.FC = (props): ReactElement => {
                   title: 'Registrado Correctamente'
                 })
                 closeModal()
+                localStorage.setItem("userData", JSON.stringify(userData))
+                openInNewTab('/')
             }
+            
         }).catch(err => {
             // alert('Error al registrar')
             console.log(err)
@@ -91,6 +98,22 @@ const Navbar: React.FC = (props): ReactElement => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+
+    const logoutHandler = () => {
+        logout()
+        window.location.href = '/';
+    }
+    let acces;
+
+    if(!localStorage.getItem(USER_DATA)){
+        acces = <span onClick={openModal}>Registrarse</span>
+    } else {
+        acces = <div className="Header-user">
+                    <span className="UserName"> {USER_INFO.nickname} </span>
+                    <span onClick={logoutHandler}> Salir </span>
+                </div>
+    }
+
     return (
         <div className="Header">
             <UserRegisterPage {...modalProps} />
@@ -111,7 +134,7 @@ const Navbar: React.FC = (props): ReactElement => {
                     <span>UserName</span>
                 </div> */}
                 <div className="Header-user">
-                    <span onClick={openModal}>Registrarse</span>
+                    {acces}
                 </div>
             </div>
         </div>

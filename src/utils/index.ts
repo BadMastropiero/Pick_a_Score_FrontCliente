@@ -21,3 +21,9 @@ export const generateCells = (): Cell[][] => {
 export const scrollToTop = () => {
     window.scrollTo(0, 0)
 }
+
+export function openInNewTab(url: string) {
+    // const win: any = window.open(url, '_blank');  // TODO change the open in new tab for href
+    const win: any = window.location.href = url
+    win.focus();
+}

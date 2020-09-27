@@ -43,7 +43,7 @@ export function getBetsByGame(gameId: string) {
     }
     return fetch(url, params)
         .then(response => {
-            //alert(JSON.stringify(response))
+            alert(JSON.stringify(response))
             return response.json();
         })
         .then(result => {
@@ -52,6 +52,34 @@ export function getBetsByGame(gameId: string) {
                 throw new Error(result.errors)
 
             return result.data;
+        })
+        .catch(error => {
+            throw error
+        })
+}
+
+export function gameInfo (gameId: string) {
+    const url = `${basePath}/user/games/gameInfo`;
+
+    const params = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            game: gameId
+        })
+    }
+
+    return fetch(url, params)
+        .then(response => {
+            // alert(JSON.stringify(response))
+            return response.json();
+        })
+        .then(result => {
+            // if(result.code !== 200)
+            //     throw new Error(result.errors)
+            return result.data
         })
         .catch(error => {
             throw error

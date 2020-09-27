@@ -1,11 +1,12 @@
-import React, { Fragment, ReactElement, useState } from 'react';
-
+import React, { Fragment, ReactElement, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import {generateCells} from '../../utils' ;
+import {gameInfo} from '../../API/games';
 import CellBtn from '../GameComponent/CellBtn';
 
 import Team1 from '../../assets/logos/NFLTeams/team1.png'
 import Team2 from '../../assets/logos/NFLTeams/team2.png';
-import { useParams } from 'react-router-dom';
+
 
 // interface GameProps {
 //     hostTeamName: string
@@ -17,7 +18,16 @@ const Game: React.FC =() : ReactElement => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [cells, setCells] = useState(generateCells());
 
-    // let {hostTeamName} = useParams<any>()
+    let gameId = useParams<any>()
+
+    const [game, setGame] = useState([])
+
+    useEffect(() => {
+        gameInfo(gameId).then(data => {
+            setGame(data)
+            // alert(JSON.stringify(data))
+        })
+    }, [])
     
     const renderCells = (): React.ReactNode => {
         return cells.map((row, rowIndex) => row.map((cell, colIndex) => 
@@ -171,13 +181,13 @@ const Game: React.FC =() : ReactElement => {
                         </h2>
                         
                             <span>    
-                                    <div className="ScoreCount-Score">
-                                        <h3>
-                                            <span>
-                                                3500
-                                            </span>
-                                        </h3>
-                                    </div>
+                                <div className="ScoreCount-Score">
+                                    <h3>
+                                        <span>
+                                            3500
+                                        </span>
+                                    </h3>
+                                </div>
                                 <br/>
                             </span> 
 

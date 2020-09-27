@@ -22,7 +22,7 @@ const SelectPage: React.FC = (): ReactElement => {
     useEffect(() => {
         getActiveGames().then(data => {
             setGames(data)
-            // alert(JSON.stringify(data))
+            alert(JSON.stringify(data))
         })
     }, [])
 

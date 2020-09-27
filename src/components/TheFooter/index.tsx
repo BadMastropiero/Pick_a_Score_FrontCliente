@@ -48,7 +48,7 @@ const TheFooter: React.FC = (): ReactElement => {
                 </div>
             </div>
             <div className="CopyRight">
-                <h3>Software developed by <span> KmadaTech</span> &copy; Copyright 2020</h3>
+                <h3>Software developed by <br/> <span> KmadaTech</span> <br/> &copy; Copyright 2020</h3>
                 <i className="Kmada-icon"></i>
             </div>
         </Fragment>

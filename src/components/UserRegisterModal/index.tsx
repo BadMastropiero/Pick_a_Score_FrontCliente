@@ -83,6 +83,7 @@ const UserRegisterPage: React.FC<IUserRegisterPageProps> = (props): ReactElement
                 <button className="RegisterForm-submit" type="submit" >Registrar</button>
             </form>
         </Modal>
+        
     </>)
 }
 export default UserRegisterPage
