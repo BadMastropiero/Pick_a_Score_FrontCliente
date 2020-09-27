@@ -43,7 +43,8 @@ export function getBetsByGame(gameId: string) {
     }
     return fetch(url, params)
         .then(response => {
-            alert(JSON.stringify(response))
+            // alert(JSON.stringify(response))
+            // console.log(JSON.stringify(response))
             return response.json();
         })
         .then(result => {

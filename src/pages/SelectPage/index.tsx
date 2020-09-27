@@ -4,7 +4,7 @@ import { scrollToTop } from '../../utils';
 import { getActiveGames } from '../../API/games'
 
 import FeaturesCard from '../../components/FeaturesCard';
-import Feature1 from '../../assets/figures/Rectángulo224.svg';
+// import Feature1 from '../../assets/figures/Rectángulo224.svg';
 
 import {
     BrowserRouter as Router,
@@ -23,6 +23,7 @@ const SelectPage: React.FC = (): ReactElement => {
         getActiveGames().then(data => {
             setGames(data)
             alert(JSON.stringify(data))
+            console.log(JSON.parse(JSON.stringify(data)))
         })
     }, [])
 
@@ -34,11 +35,15 @@ const SelectPage: React.FC = (): ReactElement => {
                 </div>
                 <section className="Features">
                     {games?.map((item: any) => {
+                        const buff = new Buffer(item.teams.team1.logo.data).toString('base64')
+                        
+                        // let Buff = new Buffer(, 'base64')
+                        alert(JSON.stringify((buff)))
                         return (
                             <Link key={item._id} 
                                   onClick={scrollToTop} 
                                   to={AuthRoutes.GAME + '/' + item._id}>
-                                <FeaturesCard source={Feature1} alt={""} teams={item.teams}  description={item.description} />
+                                <FeaturesCard source={buff} alt={""} teams={item.teams}  description={item.description} />
                             </Link>
                         )
                     })}
