@@ -5,7 +5,7 @@ import { registerUser } from '../../API/users';
 import {logout} from '../../API/auth'
 import Swal from 'sweetalert2';
 import {scrollToTop, openInNewTab} from '../../utils';
-import {USER_DATA, USER_INFO} from '../../constants/index';
+import {ACCESS_TOKEN, ACCESS_INFO, USER_DATA, USER_INFO} from '../../constants/index';
 
 
 import ActionBtn from '../ActionBtn';
@@ -105,13 +105,19 @@ const Navbar: React.FC = (props): ReactElement => {
     }
     let acces;
 
-    if(!localStorage.getItem(USER_DATA)){
-        acces = <span onClick={openModal}>Registrarse</span>
-    } else {
+    if(localStorage.getItem(USER_DATA)){
         acces = <div className="Header-user">
                     <span className="UserName"> {USER_INFO.nickname} </span>
                     <span onClick={logoutHandler}> Salir </span>
                 </div>
+    } else if (localStorage.getItem(ACCESS_TOKEN)){
+        acces = <div className="Header-user">
+                    <span className="UserName"> {ACCESS_INFO.user.nickname} </span>
+                    <span onClick={logoutHandler}> Salir </span>
+                </div>
+
+    }  else {
+        acces = <span onClick={openModal}>Registrarse</span>
     }
 
     return (
@@ -130,9 +136,6 @@ const Navbar: React.FC = (props): ReactElement => {
             </div>
             <div className="Header-right">
                 <i className="Notification-icon"></i>
-                {/* <div className="Header-user">
-                    <span>UserName</span>
-                </div> */}
                 <div className="Header-user">
                     {acces}
                 </div>
