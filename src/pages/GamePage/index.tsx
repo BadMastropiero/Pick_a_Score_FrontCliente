@@ -9,6 +9,7 @@ const GamePage: React.FC = (): ReactElement => {
     let { gameId } = useParams<any>();
 
     useEffect(()=>{
+        alert('Entro a GamePage')
         getBetsByGame(gameId).then(bets => {
             console.log(gameId,bets)
             bets?.map((item:any) => {

@@ -27,7 +27,7 @@ const SelectPage: React.FC = (): ReactElement => {
         })
     }, [])
 
-    const select = () => {
+    const SelectPageComp:React.FC = (): ReactElement => {
         return (
             <Fragment>
                 <div className="Features-content">
@@ -42,7 +42,7 @@ const SelectPage: React.FC = (): ReactElement => {
                         return (
                             <Link key={item._id} 
                                   onClick={scrollToTop} 
-                                  to={AuthRoutes.GAME + '/' + item._id}>
+                                  to={AuthRoutes.SELECT+AuthRoutes.GAME + '/' + item._id}>
                                 <FeaturesCard source1={buff1} source2={buff2} alt={""} teams={item.teams}  description={item.description} />
                             </Link>
                         )
@@ -53,16 +53,13 @@ const SelectPage: React.FC = (): ReactElement => {
     }
 
     return (
-        <Router>
-            <Switch>
-                <Route path={AuthRoutes.SELECT}>
-                    {select}
-                </Route>
-                <Route path={AuthRoutes.GAME + "/:gameId"} >
-                    <GamePage />
-                </Route>
-            </Switch>
-        </Router>
+
+        <Switch>
+            <Route exact path={AuthRoutes.SELECT} component={SelectPageComp}>
+            </Route>
+            <Route path={AuthRoutes.SELECT+AuthRoutes.GAME + "/:gameId"}  children={<GamePage/>}/>
+        </Switch>
+
     )
 }
 
