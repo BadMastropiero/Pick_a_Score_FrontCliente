@@ -21,7 +21,7 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({source, alt, teams, descript
             <span className="FeaturesContainer-text">
                 {description}
             </span>
-            <img className="FeaturesContainer-img" src={source} alt={alt} />
+            <img className="FeaturesContainer-img" src={"data:image/png;base64, "+source} alt={alt} />
             <h2 className="FeaturesContainer-name">{teams.team1.name}</h2> 
             <span className="FeaturesContainer-vs">VS</span>
             <h2 className="FeaturesContainer-name">{teams.team2.name}</h2> 
