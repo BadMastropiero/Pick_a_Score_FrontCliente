@@ -2,7 +2,7 @@
 import React, { useReducer, Reducer, ChangeEvent } from 'react'
 // import {minLengthValidation} from '../../API/form-validation'
 import { signIn } from '../../API/users';
-import { ACCESS_TOKEN } from '../../constants';
+import { ACCESS_TOKEN, USER_DATA } from '../../constants';
 import Swal from 'sweetalert2';
 import ActionBtn from '../ActionBtn';
 
@@ -50,9 +50,8 @@ export const HomeInput = () => {
         title: result.message
       })
     } else {
-      const { token } = result.data;
-      localStorage.setItem(ACCESS_TOKEN, token);
-      //localStorage.setItem(REFRESH_TOKEN,refreshToken);
+      const user = JSON.stringify(result.data)
+      localStorage.setItem(ACCESS_TOKEN, user);
       const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
