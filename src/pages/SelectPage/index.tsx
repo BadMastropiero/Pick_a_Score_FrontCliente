@@ -42,7 +42,7 @@ const SelectPage: React.FC = (): ReactElement => {
                         return (
                             <Link key={item._id} 
                                   onClick={scrollToTop} 
-                                  to={AuthRoutes.GAME + '/' + item._id}>
+                                  to={AuthRoutes.SELECT+AuthRoutes.GAME + '/' + item._id}>
                                 <FeaturesCard source1={buff1} source2={buff2} alt={""} teams={item.teams}  description={item.description} />
                             </Link>
                         )
