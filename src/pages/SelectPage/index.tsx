@@ -27,7 +27,7 @@ const SelectPage: React.FC = (): ReactElement => {
         })
     }, [])
 
-    const select = () => {
+    const SelectPageComp:React.FC = (): ReactElement => {
         return (
             <Fragment>
                 <div className="Features-content">
@@ -35,15 +35,15 @@ const SelectPage: React.FC = (): ReactElement => {
                 </div>
                 <section className="Features">
                     {games?.map((item: any) => {
-                        const buff = new Buffer(item.teams.team1.logo.data).toString('base64')
-                        
+                        const buff = Buffer.from(item.teams.team1.logo.data).toString('base64')
+
                         // let Buff = new Buffer(, 'base64')
-                        alert(JSON.stringify((buff)))
+                        //alert(JSON.stringify((buff)))
                         return (
-                            <Link key={item._id} 
-                                  onClick={scrollToTop} 
-                                  to={AuthRoutes.GAME + '/' + item._id}>
-                                <FeaturesCard source={buff} alt={""} teams={item.teams}  description={item.description} />
+                            <Link key={item._id}
+                                onClick={scrollToTop}
+                                to={AuthRoutes.SELECT+ AuthRoutes.GAME + '/' + item._id}>
+                                <FeaturesCard source={buff} alt={""} teams={item.teams} description={item.description} />
                             </Link>
                         )
                     })}
@@ -52,19 +52,16 @@ const SelectPage: React.FC = (): ReactElement => {
         )
     }
 
-    
+
 
     return (
-        <Router>
-            <Switch>
-                <Route path={AuthRoutes.SELECT}>
-                    {select}
-                </Route>
-                <Route path={AuthRoutes.GAME + "/:gameId"} >
-                    <GamePage />
-                </Route>
-            </Switch>
-        </Router>
+
+        <Switch>
+            <Route exact path={AuthRoutes.SELECT} component={SelectPageComp}>
+            </Route>
+            <Route path={AuthRoutes.SELECT+AuthRoutes.GAME + "/:gameId"}  children={<GamePage/>}/>
+        </Switch>
+
     )
 }
 

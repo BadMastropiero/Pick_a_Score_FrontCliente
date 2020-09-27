@@ -17,6 +17,7 @@ import RegisterCheckoutPage from '../pages/Register&CheckoutPage';
 import ConfirmationPage from '../pages/ConfirmationPage';
 import InfoPage from '../pages/InfoPage';
 
+
 const PickaScore: React.FC = (): ReactElement => {
   return (
     <div>
@@ -31,10 +32,11 @@ const PickaScore: React.FC = (): ReactElement => {
             path={AuthRoutes.SELECT} 
             Component={SelectPage}
           />
-          <AuthRoute
+          {/*<AuthRoute
             path={AuthRoutes.GAME} 
             Component={GamePage}
-          />
+          /> */}
+
           <AuthRoute
             path={AuthRoutes.REGISTER} 
             Component={RegisterCheckoutPage}
