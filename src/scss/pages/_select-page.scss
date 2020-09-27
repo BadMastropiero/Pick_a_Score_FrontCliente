@@ -22,3 +22,9 @@
         -webkit-box-reflect: below .5px linear-gradient(transparent, #0005);
     }
 }
+
+@media (max-width: 450px) {
+    .Features{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}

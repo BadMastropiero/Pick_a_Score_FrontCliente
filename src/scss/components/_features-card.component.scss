@@ -20,7 +20,7 @@
         font-size: 1.5em;
         margin-bottom: 30px;        
         padding-bottom: 10px;
-        text-align: justify;
+        text-align: center;
         text-transform: uppercase;
     }
     &-text{
@@ -38,10 +38,10 @@
         width: 90%;
     }
     &-teamSectionName{
+        align-items: center;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: space-evenly;
         width: 90%;
     }
     &-img {
@@ -62,8 +62,20 @@
         border: 1px solid var(--color-main-alert);
         color: var(--color-main-alert);
         height: 20px;
-        margin-bottom: 20px;
+        margin: 20px;
         padding: 10px;
 
+    }
+}
+
+@media (max-width: 450px) {
+    .FeaturesContainer{
+        &-img{
+            height: 80px;
+            width: 80px;
+        }
+        &-name{
+            font-size: 1rem;
+        }
     }
 }

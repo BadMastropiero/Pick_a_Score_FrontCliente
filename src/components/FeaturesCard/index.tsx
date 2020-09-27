@@ -23,14 +23,19 @@ const FeaturesCard: React.FC<FeaturesCardProps> = ({source1, source2, alt, teams
                 {description}
             </span>
         <div className="FeaturesContainer-teamSection">
-            <img className="FeaturesContainer-img" src={"data:image/png;base64, "+source1} alt={alt} />
-            <span className="FeaturesContainer-vs">VS</span>
-            <img className="FeaturesContainer-img" src={"data:image/png;base64, "+source2} alt={alt} />
-        </div>
             <div className="FeaturesContainer-teamSectionName">
+                <img className="FeaturesContainer-img" src={"data:image/png;base64, "+source1} alt={alt} />
                 <h2 className="FeaturesContainer-name">{teams.team1.name}</h2> 
+            </div>
+            
+            <span className="FeaturesContainer-vs">VS</span>
+            
+            <div className="FeaturesContainer-teamSectionName">
+                <img className="FeaturesContainer-img" src={"data:image/png;base64, "+source2} alt={alt} />
                 <h2 className="FeaturesContainer-name">{teams.team2.name}</h2> 
             </div>
+        </div>
+
         </div>
     )
 }
