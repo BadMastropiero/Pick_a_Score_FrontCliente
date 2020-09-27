@@ -7,7 +7,8 @@ interface teams {
 }
 
 interface FeaturesCardProps {
-    source: string
+    source1: string
+    source2:string
     alt: string
     teams: teams
     description: string
@@ -15,16 +16,21 @@ interface FeaturesCardProps {
 
 
 
-const FeaturesCard: React.FC<FeaturesCardProps> = ({source, alt, teams, description}): ReactElement => {
+const FeaturesCard: React.FC<FeaturesCardProps> = ({source1, source2, alt, teams, description}): ReactElement => {
     return (
         <div className="FeaturesContainer-card">
             <span className="FeaturesContainer-text">
                 {description}
             </span>
-            <img className="FeaturesContainer-img" src={"data:image/png;base64, "+source} alt={alt} />
-            <h2 className="FeaturesContainer-name">{teams.team1.name}</h2> 
+        <div className="FeaturesContainer-teamSection">
+            <img className="FeaturesContainer-img" src={"data:image/png;base64, "+source1} alt={alt} />
             <span className="FeaturesContainer-vs">VS</span>
-            <h2 className="FeaturesContainer-name">{teams.team2.name}</h2> 
+            <img className="FeaturesContainer-img" src={"data:image/png;base64, "+source2} alt={alt} />
+        </div>
+            <div className="FeaturesContainer-teamSectionName">
+                <h2 className="FeaturesContainer-name">{teams.team1.name}</h2> 
+                <h2 className="FeaturesContainer-name">{teams.team2.name}</h2> 
+            </div>
         </div>
     )
 }
