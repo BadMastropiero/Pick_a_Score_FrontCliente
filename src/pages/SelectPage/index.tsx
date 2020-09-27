@@ -4,14 +4,11 @@ import { scrollToTop } from '../../utils';
 import { getActiveGames } from '../../API/games'
 
 import FeaturesCard from '../../components/FeaturesCard';
-// import Feature1 from '../../assets/figures/Rectángulo224.svg';
 
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     Link,
-    useParams
 } from "react-router-dom";
 
 import GamePage from '../GamePage';
