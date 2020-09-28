@@ -62,7 +62,7 @@ export function getBetsByGame(gameId: string) {
 
 export function gameInfo (IDgame: string) {
     const url = `${basePath}/user/games/gameInfo`;
-    const token = JSON.stringify(ACCESS_INFO.token)
+    const token = ACCESS_INFO.token
     console.log(IDgame)
     console.log(token)
     const params = {
@@ -78,13 +78,13 @@ export function gameInfo (IDgame: string) {
 
     return fetch(url, params)
         .then(response => {
-            alert(JSON.stringify(response))
+            // alert(JSON.stringify(response))
             return response.json();
         })
         .then(result => {
             // if(result.code !== 200)
             //     throw new Error(result.errors)
-            console.log(result)
+            // console.log(result)
             return result.data
         })
         .catch(error => {

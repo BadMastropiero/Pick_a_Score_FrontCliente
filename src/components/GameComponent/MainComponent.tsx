@@ -1,5 +1,4 @@
 import React, { Fragment, ReactElement, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import {generateCells} from '../../utils' ;
 import {gameInfo} from '../../API/games';
 import CellBtn from '../GameComponent/CellBtn';
@@ -17,14 +16,13 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [cells, setCells] = useState(generateCells());
 
-    // let gameId = useParams<any>()
-
-    const [game, setGame] = useState([])
+    const [game, setGame] = useState<any>({})
 
     useEffect(() => {
         gameInfo(IDgame).then(data => {
             setGame(data)
             // alert(JSON.stringify(data))
+            console.log(data)
         })
     }, [])
     
@@ -33,6 +31,11 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
             <CellBtn row={rowIndex} col={colIndex} 
         key={`${rowIndex}-${colIndex}`} />))
     }
+    
+    const buff1 = game.teams ? Buffer.from(game.teams.team1.card.data).toString('base64') : ''
+    const buff2 = game.teams ? Buffer.from(game.teams.team2.card.data).toString('base64') : ''
+    // const buff1 = Buffer.from(game.teams?.team1.card.data).toString('base64')
+    // console.log(buff1)
 
     return (
         <Fragment>
@@ -41,10 +44,10 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
                 <div className="Top">
                     <div className="Top-Team2">
                         <div className="Team2-logo">
-                           <img className="Logo-img" src={Team1} alt=""/>
+                           <img className="Logo-img" src={"data:image/png;base64, "+buff2} alt=""/>
                         </div>    
                         <div className="Team-name">
-                            <span></span>
+                            <span>{game.teams?.team2?.name}</span>
                         </div>
                         <div className="Top-Score">
                                 <div className="ScoreNumber">
@@ -103,10 +106,10 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
                 <div className="MainBody">
                     <div className="Left">
                         <div className="Team1-logo">
-                            <img className="Logo-img" src={Team2} alt=""/>
+                            <img className="Logo-img" src={"data:image/png;base64, "+buff1} alt=""/>
                         </div> 
                         <div className="Team-name">
-                            <span></span>
+                            <span>{game.teams?.team1?.name}</span>
                         </div>
                         <div className="Left-Score">
                         <div className="ScoreNumber">

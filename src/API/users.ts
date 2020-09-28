@@ -37,8 +37,8 @@ export function checkOut() {
             "user": "5f545db5ab1a2dc54485dcae",
             "game": "5f5403a479e9922e717934ef",
             "numbers": {
-                "n1": 0,
-                "n2": 0
+                "N1": 0,
+                "N2": 0
             }
         })
     }
