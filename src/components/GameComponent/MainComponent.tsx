@@ -8,22 +8,21 @@ import Team1 from '../../assets/logos/NFLTeams/team1.png';
 import Team2 from '../../assets/logos/NFLTeams/team2.png';
 
 
-// interface GameProps {
-//     hostTeamName: string
-//     visitTeamName: string
-// }
+interface GameProps {
+    IDgame: string
+}
 
 
-const Game: React.FC =() : ReactElement => {
+const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [cells, setCells] = useState(generateCells());
 
-    let gameId = useParams<any>()
+    // let gameId = useParams<any>()
 
     const [game, setGame] = useState([])
 
     useEffect(() => {
-        gameInfo(gameId).then(data => {
+        gameInfo(IDgame).then(data => {
             setGame(data)
             // alert(JSON.stringify(data))
         })
@@ -179,7 +178,6 @@ const Game: React.FC =() : ReactElement => {
                             <span>T</span>
                             <span>E</span>
                         </h2>
-                        
                             <span>    
                                 <div className="ScoreCount-Score">
                                     <h3>
@@ -190,7 +188,6 @@ const Game: React.FC =() : ReactElement => {
                                 </div>
                                 <br/>
                             </span> 
-
                         <h2>
                             <span>E</span>
                             <span>N</span>

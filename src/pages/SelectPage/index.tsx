@@ -20,7 +20,7 @@ const SelectPage: React.FC = (): ReactElement => {
         getActiveGames().then(data => {
             setGames(data)
             // alert(JSON.stringify(data))
-            console.log(JSON.parse(JSON.stringify(data)))
+            // console.log(JSON.parse(JSON.stringify(data)))
         })
     }, [])
 
@@ -34,8 +34,6 @@ const SelectPage: React.FC = (): ReactElement => {
                     {games?.map((item: any) => {
                         const buff1 = Buffer.from(item.teams.team1.logo.data).toString('base64')
                         const buff2 = Buffer.from(item.teams.team2.logo.data).toString('base64')
-                        // let Buff = new Buffer(, 'base64')
-                        // alert(JSON.stringify((buff)))
                         return (
                             <Link key={item._id} 
                                   onClick={scrollToTop} 

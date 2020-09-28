@@ -8,12 +8,15 @@ const GamePage: React.FC = (): ReactElement => {
     
     let { gameId } = useParams<any>();
 
+    const gameString = gameId
+
+    // console.log(typeof gameString)
+
     useEffect(()=>{
-        alert('Entro a GamePage')
+        // alert('Entro a GamePage')
         getBetsByGame(gameId).then(bets => {
-            console.log(gameId,bets)
             bets?.map((item:any) => {
-                // alert(JSON.stringify(item))
+                // alert(JSON.parse(JSON.stringify(item)))
             })
         }).catch(err => {
             console.error(err)
@@ -25,7 +28,7 @@ const GamePage: React.FC = (): ReactElement => {
     return (
         <Fragment>
             <div className="GameSection">
-                <Game/>
+                <Game IDgame={gameString}/>
             </div>
         </Fragment>
     )

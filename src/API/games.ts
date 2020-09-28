@@ -1,4 +1,5 @@
 import { basePath } from '../API/config';
+import {ACCESS_INFO} from '../constants';
 //
 export function getActiveGames() {
 
@@ -59,27 +60,31 @@ export function getBetsByGame(gameId: string) {
         })
 }
 
-export function gameInfo (gameId: string) {
+export function gameInfo (IDgame: string) {
     const url = `${basePath}/user/games/gameInfo`;
-
+    const token = JSON.stringify(ACCESS_INFO.token)
+    console.log(IDgame)
+    console.log(token)
     const params = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-            game: gameId
+            game: IDgame
         })
     }
 
     return fetch(url, params)
         .then(response => {
-            // alert(JSON.stringify(response))
+            alert(JSON.stringify(response))
             return response.json();
         })
         .then(result => {
             // if(result.code !== 200)
             //     throw new Error(result.errors)
+            console.log(result)
             return result.data
         })
         .catch(error => {
