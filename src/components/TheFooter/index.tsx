@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import {NonAuthRoutes} from '../../types/enums/app-routes.enum';
 import {scrollToTop} from '../../utils';
 
-import ActionBtn from '../ActionBtn'
+import ActionBtn from '../ActionBtn';
+import LOGO from '../../assets/logos/LOGO_V1.png';
 
 const TheFooter: React.FC = (): ReactElement => {
     return (
@@ -48,8 +49,8 @@ const TheFooter: React.FC = (): ReactElement => {
                 </div>
             </div>
             <div className="CopyRight">
-                <h3>Software developed by <br/> <span> KmadaTech</span> <br/> &copy; Copyright 2020</h3>
-                <i className="Kmada-icon"></i>
+                <h3>Software owned by <br/> <span> Pick@Score </span> <br/> &copy; Copyright 2020</h3>
+                <img className="Header-img" src={LOGO} alt="" />
             </div>
         </Fragment>
         

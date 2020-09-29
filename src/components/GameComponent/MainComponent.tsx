@@ -3,14 +3,9 @@ import {generateCells} from '../../utils' ;
 import {gameInfo} from '../../API/games';
 import CellBtn from '../GameComponent/CellBtn';
 
-import Team1 from '../../assets/logos/NFLTeams/team1.png';
-import Team2 from '../../assets/logos/NFLTeams/team2.png';
-
-
 interface GameProps {
     IDgame: string
 }
-
 
 const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
