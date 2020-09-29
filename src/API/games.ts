@@ -18,7 +18,7 @@ export function getActiveGames() {
         })
         .then(result => {
             // alert(JSON.stringify(result.data))
-            if(result.code!=200)
+            if(result.code!==200)
                 throw new Error(result.errors)
 
             return result.data;
@@ -50,7 +50,7 @@ export function getBetsByGame(gameId: string) {
         })
         .then(result => {
 
-            if(result.code != 200)
+            if(result.code !== 200)
                 throw new Error(result.errors)
 
             return result.data;

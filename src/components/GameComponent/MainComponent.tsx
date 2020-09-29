@@ -1,7 +1,9 @@
 import React, { Fragment, ReactElement, useEffect, useState } from 'react';
 import {generateCells} from '../../utils' ;
 import {gameInfo} from '../../API/games';
+import {ACCESS_INFO} from '../../constants'
 import CellBtn from '../GameComponent/CellBtn';
+
 
 interface GameProps {
     IDgame: string
@@ -13,22 +15,25 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
 
     const [game, setGame] = useState<any>({})
 
+    const IDuser = ACCESS_INFO.user._id;
+
     useEffect(() => {
         gameInfo(IDgame).then(data => {
             setGame(data)
             // alert(JSON.stringify(data))
             console.log(data)
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     const renderCells = (): React.ReactNode => {
         return cells.map((row, rowIndex) => row.map((cell, colIndex) => 
-            <CellBtn row={rowIndex} col={colIndex} 
+            <CellBtn userID={IDuser} gameID={IDgame} row={rowIndex} col={colIndex} 
         key={`${rowIndex}-${colIndex}`} />))
     }
     
-    const buff1 = game.teams ? Buffer.from(game.teams.team1.card.data).toString('base64') : ''
-    const buff2 = game.teams ? Buffer.from(game.teams.team2.card.data).toString('base64') : ''
+    const buff1 = game.teams ? Buffer.from(game.teams?.team1?.card.data).toString('base64') : ''
+    const buff2 = game.teams ? Buffer.from(game.teams?.team2?.card.data).toString('base64') : ''
     // const buff1 = Buffer.from(game.teams?.team1.card.data).toString('base64')
     // console.log(buff1)
 

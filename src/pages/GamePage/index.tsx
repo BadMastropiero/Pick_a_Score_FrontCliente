@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, ReactElement,useEffect } from 'react';
 import { getBetsByGame } from '../../API/games';
 import Game from '../../components/GameComponent/MainComponent';
@@ -22,8 +23,6 @@ const GamePage: React.FC = (): ReactElement => {
             console.error(err)
         })
     },[])
-
-
 
     return (
         <Fragment>

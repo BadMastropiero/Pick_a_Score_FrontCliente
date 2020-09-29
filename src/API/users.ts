@@ -24,7 +24,7 @@ export function signIn(data: any) {
         })
 }
 
-export function checkOut() {
+export function checkOut(row: number, col: number, userID: string, gameID: string ) {
 
     const url = `${basePath}/paypal/checkoutBet`;
 
@@ -34,15 +34,15 @@ export function checkOut() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "user": "5f545db5ab1a2dc54485dcae",
-            "game": "5f5403a479e9922e717934ef",
-            "numbers": {
-                "n1": 0,
-                "n2": 0
+            user: userID,
+            game: gameID,
+            numbers: {
+                n1: row,
+                n2: col
             }
         })
     }
-    // alert(JSON.stringify(params))
+    alert(JSON.stringify(params))
     return fetch(url, params)
         .then(response => {
             return response.json();
@@ -57,7 +57,6 @@ export function checkOut() {
             console.log(error)
         })
 }
-
 
 
 export function registerUser(data: any) {

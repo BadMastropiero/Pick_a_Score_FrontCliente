@@ -1,32 +1,31 @@
 import React, { Fragment, useState } from 'react'
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import Modal from 'react-modal';
 import ActionBtn from '../ActionBtn'
 
-import {checkOut} from '../../API/users';
 
-const handlerOnClick = async() => {
-    const result = await checkOut()
-    // alert(result)
-    console.log(result)
-    if (result.code !== 200) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 8000,
-            timerProgressBar: true,
-            onOpen: (toast) => {
-              toast.addEventListener('mouseenter', Swal.stopTimer)
-              toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-        Toast.fire({
-            icon: 'error',
-            title: result.Error.message
-        })
-    }
-}
+// const handlerOnClick = async() => {
+//     const result = await checkOut()
+//     // alert(result)
+//     console.log(result)
+//     if (result.code !== 200) {
+//         const Toast = Swal.mixin({
+//             toast: true,
+//             position: 'top-end',
+//             showConfirmButton: false,
+//             timer: 8000,
+//             timerProgressBar: true,
+//             onOpen: (toast) => {
+//               toast.addEventListener('mouseenter', Swal.stopTimer)
+//               toast.addEventListener('mouseleave', Swal.resumeTimer)
+//             }
+//         })
+//         Toast.fire({
+//             icon: 'error',
+//             title: result.Error.message
+//         })
+//     }
+// }
 
 export const CheckoutForm = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -74,7 +73,7 @@ export const CheckoutForm = () => {
                             <input
                                 type='submit'
                                 value='Comprar'
-                                onClick={(e)=>{e.preventDefault(); handlerOnClick()}}
+                                // onClick={(e)=>{e.preventDefault(); handlerOnClick()}}
                                 className='signin-submit'
                                 />
                             </ActionBtn>
