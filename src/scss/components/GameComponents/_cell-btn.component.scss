@@ -32,6 +32,10 @@
         }
        
     }
+    &-scoreWithUser{
+        color: red;
+        cursor: not-allowed;
+    }
     & span {
         color: var(--color-main-light);
     }
@@ -44,5 +48,7 @@
     
     &:active{
         background-color: #FFD300;
+        
     }
 }
+

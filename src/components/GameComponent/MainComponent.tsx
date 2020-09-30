@@ -1,19 +1,21 @@
 import React, { Fragment, ReactElement, useEffect, useState } from 'react';
 import {generateCells} from '../../utils' ;
-import {gameInfo} from '../../API/games';
-import {ACCESS_INFO} from '../../constants'
+import {gameInfo, getBetsByGame} from '../../API/games';
+import {ACCESS_INFO, MIN_BET} from '../../constants'
 import CellBtn from '../GameComponent/CellBtn';
-
 
 interface GameProps {
     IDgame: string
 }
+
 
 const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [cells, setCells] = useState(generateCells());
 
     const [game, setGame] = useState<any>({})
+
+    const [bets, setBets] = useState<any>([])
 
     const IDuser = ACCESS_INFO.user._id;
 
@@ -23,19 +25,28 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
             // alert(JSON.stringify(data))
             console.log(data)
         })
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    useEffect(() => {
+        getBetsByGame(IDgame).then(data=> {
+            setBets(data)
+            console.log(data)
+        })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    
     
     const renderCells = (): React.ReactNode => {
         return cells.map((row, rowIndex) => row.map((cell, colIndex) => 
-            <CellBtn userID={IDuser} gameID={IDgame} row={rowIndex} col={colIndex} 
+            <CellBtn bets={bets} userID={IDuser} gameID={IDgame} row={rowIndex} col={colIndex} 
         key={`${rowIndex}-${colIndex}`} />))
     }
     
     const buff1 = game.teams ? Buffer.from(game.teams?.team1?.card.data).toString('base64') : ''
     const buff2 = game.teams ? Buffer.from(game.teams?.team2?.card.data).toString('base64') : ''
-    // const buff1 = Buffer.from(game.teams?.team1.card.data).toString('base64')
-    // console.log(buff1)
 
     return (
         <Fragment>
@@ -185,7 +196,7 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
                                 <div className="ScoreCount-Score">
                                     <h3>
                                         <span>
-                                            3500
+                                            {MIN_BET * bets.length}
                                         </span>
                                     </h3>
                                 </div>
