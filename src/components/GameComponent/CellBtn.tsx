@@ -1,6 +1,6 @@
-import React, { Fragment, ReactElement, useState } from 'react';
+import React, { Fragment, ReactElement, useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import {checkOut} from '../../API/users';
+import { checkOut } from '../../API/users';
 
 interface rolProps {
     _id: string
@@ -29,7 +29,6 @@ interface betProps {
     user: userProps
 }
 
-
 interface CellBtnProp {
     bets: any
     row: number
@@ -38,40 +37,42 @@ interface CellBtnProp {
     gameID: string
 }
 
-const CellBtn: React.FC<CellBtnProp> = ({bets, row, col, userID, gameID }): ReactElement => {
-    const handlerOnClick = async() => {
+const CellBtn: React.FC<CellBtnProp> = ({ bets, row, col, userID, gameID }): ReactElement => {
+    const handlerOnClick = async () => {
         const result = await checkOut(row, col, userID, gameID)
         // alert(result)
         console.log(result)
     }
-    console.log(bets)
-    let cellScore
 
-    bets.map((bet:betProps) => {
-        if (bet.numbers.N1 === row && bet.numbers.N2 === col) {
-            return cellScore = <div className="CellBtn-scoreWithUser" >
-                                    <span> {bet.user.nickname} </span>
-                                </div>
-            
-            
+    //const [cells, setCells] = useState()
+    //console.log(bets)
+    let cellScore = () => {
+        const ifCelda = bets.filter((item: any) => (item.numbers.N1 === row && item.numbers.N2 === col))
+        if (ifCelda.length>0) {
+            return (
+                <div className="CellBtn-scoreWithUser" >
+                    <span> {ifCelda[0].user.nickname} </span>
+                </div>
+            )
         } else {
-            return cellScore = <div className="CellBtn-score">
-                                    <span> {row + '-' + col} </span>
-                                </div>
+            return (
+                <div className="CellBtn-score">
+                    <span> {row + '-' + col} </span>
+                </div>
+            )
         }
-    })
 
-
-    for (let betPays of bets) {
-        console.log(betPays)
     }
 
+    /*for (let betPays of bets) {
+        console.log(betPays)
+    }*/
 
     const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
         <Fragment>
             <div className="CellBtn" onClick={() => { setModalIsOpen(!modalIsOpen) }}>
-                {cellScore}
+                {cellScore()}
             </div>
             <Modal
                 isOpen={modalIsOpen}
