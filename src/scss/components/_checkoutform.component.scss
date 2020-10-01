@@ -1,29 +1,15 @@
-.CheckoutForm{
-    &-form{
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: #ffffff;
-        h2 {
-            border-bottom: 1px solid white;
-            text-transform: uppercase;
-        }
-        img, h2 {
-            margin-top: 20px;
-        }
-    }
-    &-form:first-child div {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        & div, label {
-            margin: 20px;
-        }
-
-        & label {
-            border-bottom: 1px solid white;
-        }
+.CheckoutMessage{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+    text-align: center;
+    h3 {
+        color: var(--color-main-alert);
+        font-family: 'budmo-jiggler';
+        font-size: 3rem;
+        margin: 20px;
+        text-transform: uppercase;
     }
 }

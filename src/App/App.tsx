@@ -12,7 +12,7 @@ import AuthRoute from '../routes'
 // Import Pages
 import HomePage from '../pages/HomePage';
 import SelectPage from '../pages/SelectPage';
-import RegisterCheckoutPage from '../pages/Register&CheckoutPage';
+import CheckoutPage from '../pages/CheckoutPage';
 import ConfirmationPage from '../pages/ConfirmationPage';
 import InfoPage from '../pages/InfoPage';
 
@@ -32,8 +32,8 @@ const PickaScore: React.FC = (): ReactElement => {
             Component={SelectPage}
           />
           <AuthRoute
-            path={AuthRoutes.REGISTER} 
-            Component={RegisterCheckoutPage}
+            path={AuthRoutes.CHECKOUT} 
+            Component={CheckoutPage}
           />
           <AuthRoute 
             path = {AuthRoutes.CONFIRMATION}

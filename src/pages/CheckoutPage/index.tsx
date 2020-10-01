@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 
 import {CheckoutForm} from '../../components/CheckoutForm'
 
-const RegisterCheckoutPage: React.FC = (): ReactElement => {
+const CheckoutPage: React.FC = (): ReactElement => {
     return (
         <div>
             <CheckoutForm />
@@ -10,4 +10,4 @@ const RegisterCheckoutPage: React.FC = (): ReactElement => {
     )
 }
 
-export default RegisterCheckoutPage
+export default CheckoutPage

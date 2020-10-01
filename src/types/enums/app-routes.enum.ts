@@ -14,7 +14,7 @@ export enum UserRoles {
 export enum AuthRoutes {
     SELECT = '/select',
     GAME = '/game',
-    REGISTER = '/checkout',
+    CHECKOUT = '/checkout',
     CONFIRMATION = '/confirmation' 
 }
 
