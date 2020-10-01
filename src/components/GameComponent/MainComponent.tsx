@@ -8,7 +8,6 @@ interface GameProps {
     IDgame: string
 }
 
-
 const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [cells, setCells] = useState(generateCells());
@@ -37,7 +36,16 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    
+    let payBet = () => {
+        const ifPay = bets.filter((item: any) => (item.paid))
+        if (ifPay.length>0){
+            return (<span>{MIN_BET * ifPay.length}</span>)
+        } else {
+            return (<span>Aun sin apuestas</span>)
+        }
+    }
+
+
     
     const renderCells = (): React.ReactNode => {
         return cells.map((row, rowIndex) => row.map((cell, colIndex) => 
@@ -195,9 +203,7 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
                             <span>    
                                 <div className="ScoreCount-Score">
                                     <h3>
-                                        <span>
-                                            {MIN_BET * bets.length}
-                                        </span>
+                                        {payBet()}
                                     </h3>
                                 </div>
                                 <br/>

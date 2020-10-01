@@ -43,8 +43,11 @@ export function checkOut(row: number, col: number, userID: string, gameID: strin
         })
     }
     alert(JSON.stringify(params))
+    
     return fetch(url, params)
+    
         .then(response => {
+            console.log(JSON.stringify(params))
             return response.json();
         })
         .then(result => {

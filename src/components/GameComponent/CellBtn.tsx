@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement, useState, useEffect } from 'react';
+import React, { Fragment, ReactElement, useState } from 'react';
 import Modal from 'react-modal';
 import { checkOut } from '../../API/users';
 
@@ -47,21 +47,24 @@ const CellBtn: React.FC<CellBtnProp> = ({ bets, row, col, userID, gameID }): Rea
     //const [cells, setCells] = useState()
     //console.log(bets)
     let cellScore = () => {
-        const ifCelda = bets.filter((item: any) => (item.numbers.N1 === row && item.numbers.N2 === col))
+        const ifCelda = bets.filter((item: any) => (item.numbers.N1 === row && item.numbers.N2 === col && item.paid))
         if (ifCelda.length>0) {
             return (
-                <div className="CellBtn-scoreWithUser" >
-                    <span> {ifCelda[0].user.nickname} </span>
+                <div className="CellBtn">
+                    <div className="CellBtn-scoreWithUser" >
+                        <span> {ifCelda[0].user.nickname} </span>
+                    </div>
                 </div>
             )
         } else {
             return (
-                <div className="CellBtn-score">
-                    <span> {row + '-' + col} </span>
+                <div className="CellBtn" onClick={() => { setModalIsOpen(!modalIsOpen) }}>
+                    <div className="CellBtn-score">
+                        <span> {row + '-' + col} </span>
+                    </div>
                 </div>
             )
         }
-
     }
 
     /*for (let betPays of bets) {
@@ -71,9 +74,9 @@ const CellBtn: React.FC<CellBtnProp> = ({ bets, row, col, userID, gameID }): Rea
     const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
         <Fragment>
-            <div className="CellBtn" onClick={() => { setModalIsOpen(!modalIsOpen) }}>
+            
                 {cellScore()}
-            </div>
+            
             <Modal
                 isOpen={modalIsOpen}
                 className="Modal"
