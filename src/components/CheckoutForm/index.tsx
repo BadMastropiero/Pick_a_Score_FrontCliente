@@ -4,15 +4,13 @@ import {AuthRoutes} from '../../types/enums/app-routes.enum';
 import {scrollToTop} from '../../utils';
 import ActionBtn from '../ActionBtn';
 
-
-
 export const CheckoutForm = () => {
     
     return (
         <Fragment>
             <div className="CheckoutMessage">
                 <h3 className="CheckoutMessage-text">
-                    Muchas gracias por su compra <br/> Éxitos!
+                    Gracias por jugar Pick@Score <br/> Éxitos!
                 </h3>
                 <ActionBtn>
                     <Link onClick={scrollToTop} to={AuthRoutes.SELECT}>
@@ -20,7 +18,6 @@ export const CheckoutForm = () => {
                     </Link>
                 </ActionBtn>    
             </div>
-            
         </Fragment>
     )
 }

@@ -1,6 +1,7 @@
 import React, { Fragment, ReactElement, useState } from 'react';
 import Modal from 'react-modal';
 import { checkOut } from '../../API/users';
+import ActionBtn from '../ActionBtn';
 
 interface rolProps {
     _id: string
@@ -39,9 +40,9 @@ interface CellBtnProp {
 
 const CellBtn: React.FC<CellBtnProp> = ({ bets, row, col, userID, gameID }): ReactElement => {
     const handlerOnClick = async () => {
-        const result = await checkOut(row, col, userID, gameID)
+        await checkOut(row, col, userID, gameID)
         // alert(result)
-        console.log(result)
+        // console.log(result)
     }
 
     //const [cells, setCells] = useState()
@@ -91,7 +92,10 @@ const CellBtn: React.FC<CellBtnProp> = ({ bets, row, col, userID, gameID }): Rea
                         Usted va a comprar el  score <br /> <br /> {row + '-' + col}
                     </span>
                     <div className="Modal-btn">
-                        <button onClick={handlerOnClick} className="ActionBtn-name" > comprar</button>
+                        <ActionBtn> 
+                            <button onClick={handlerOnClick} className="ActionBtn-name" > <h4>COMPRAR</h4> </button>
+                        </ActionBtn>
+                        
                     </div>
                 </div>
             </Modal>

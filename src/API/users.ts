@@ -42,7 +42,7 @@ export function checkOut(row: number, col: number, userID: string, gameID: strin
             }
         })
     }
-    alert(JSON.stringify(params))
+    // alert(JSON.stringify(params))
     
     return fetch(url, params)
     

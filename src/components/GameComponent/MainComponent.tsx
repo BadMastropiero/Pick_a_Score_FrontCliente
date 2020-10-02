@@ -1,7 +1,7 @@
 import React, { Fragment, ReactElement, useEffect, useState } from 'react';
 import {generateCells} from '../../utils' ;
 import {gameInfo, getBetsByGame} from '../../API/games';
-import {ACCESS_INFO, MIN_BET} from '../../constants'
+import {ACCESS_INFO, MIN_BET, HOUSE_FEE} from '../../constants'
 import CellBtn from '../GameComponent/CellBtn';
 
 interface GameProps {
@@ -39,7 +39,7 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
     let payBet = () => {
         const ifPay = bets.filter((item: any) => (item.paid))
         if (ifPay.length>0){
-            return (<span>{MIN_BET * ifPay.length}</span>)
+            return (<span>{MIN_BET * ifPay.length * (100 - HOUSE_FEE)/100}</span>)
         } else {
             return (<span>Aun sin apuestas</span>)
         }
