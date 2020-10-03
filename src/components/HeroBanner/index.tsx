@@ -20,13 +20,14 @@ const HeroBanner: React.FC = (): ReactElement =>{
         <div className = "Banner">
             <div className="Banner-content">
                 <h1 className="Banner-contentTitle">
-                   <span> Pickascore </span> <br/> <br/> La Quiniela Digital de la NFL
+                   <span> Pickascore </span> <br/>  La Quiniela Digital de la NFL
                 </h1>
                 <p className = "Banner-contentText">
                     Solo Entra, Escoge y Juega el Juego <br/> con Pickascore
                 </p>
                 <p className="Banner-contentText">
-                    Ganas hasta $1,000 por cuarto y hasta $4,000 por Partido
+                    Ganas hasta $4,000 en Quinielas de Marcador Final y ganas hasta $1,000  por cuarto En las Quinielas por Cuarto
+
                 </p>
                 {userPin}
                 <i style={{margin: "10px"}} className = "Paypal-icon"></i> 
