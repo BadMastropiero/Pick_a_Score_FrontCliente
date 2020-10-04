@@ -81,7 +81,7 @@ export const HomeInput = () => {
           <label>Introduzca Pin</label>
           <input
             type="password"
-            placeholder="CÓDIGO DE INVITADO"
+            placeholder="PIN"
             id="password"
             className="password"
           />
