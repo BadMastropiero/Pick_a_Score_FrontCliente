@@ -62,7 +62,7 @@ const Game: React.FC <GameProps> =({IDgame}) : ReactElement => {
             <div className="Game">
                 <div className="Top">
                     <h2 className="Top-title">
-                    Las apuestas solo son válidas hasta las 9PM, hora Central de Estados Unidos
+                    Las apuestas solo son válidas hasta las 8PM, hora Central de Estados Unidos
                     </h2>
                     <div className="Top-Team2">
                         <div className="Team2-logo">
