@@ -1,4 +1,5 @@
 import { basePath } from '../API/config';
+import { ACCESS_INFO } from '../constants';
 import {openInNewTab} from '../utils/index';
 
 export function signIn(data: any) {
@@ -87,4 +88,30 @@ export function registerUser(data: any) {
         .catch(error => {
             return error
         })
+}
+
+export function refreshUser() {
+    const url = `${basePath}/user/user/refreshToken`;
+    const token = ACCESS_INFO.token
+    const params = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: token
+    }
+    return fetch(url, params)
+    .then(response => {
+        return response.json();
+    })
+    .then(result => {
+        
+        if (result.code !== 200) {
+            return result
+        }
+        return result.data;
+    })
+    .catch(error => {
+        return error
+    })
 }

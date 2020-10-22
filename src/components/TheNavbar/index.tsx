@@ -1,7 +1,7 @@
 import React, { ReactElement, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthRoutes, NonAuthRoutes } from '../../types/enums/app-routes.enum';
-import { registerUser } from '../../API/users';
+import { registerUser, refreshUser } from '../../API/users';
 import {logout} from '../../API/auth'
 import Swal from 'sweetalert2';
 import {scrollToTop, openInNewTab} from '../../utils';
@@ -27,10 +27,8 @@ const Navbar: React.FC = (props): ReactElement => {
     }
     const [modalProps, setModalProps] = useState(modalPropsDefault)
 
-    const submitHandler = (data: any) => {
-        
-        registerUser(data).then(userData => {
-            
+    const submitHandler = (data: any) => { 
+        registerUser(data).then(userData => { 
             if (userData.errors) {
                 const Toast = Swal.mixin({
                     toast: true,
@@ -60,7 +58,6 @@ const Navbar: React.FC = (props): ReactElement => {
                     toast.addEventListener('mouseleave', Swal.resumeTimer)
                   }
                 })
-          
                 Toast.fire({
                   icon: 'success',
                   title: 'Registrado Correctamente'
@@ -74,6 +71,17 @@ const Navbar: React.FC = (props): ReactElement => {
             // alert('Error al registrar')
             console.log(err)
         })
+    }
+
+    const refreshHandler = () => {
+        refreshUser().then(userData => {
+            // alert(JSON.stringify(userData))
+            // localStorage.setItem("userData", JSON.stringify(userData))
+        }).catch(err => {
+            // alert('Error al registrar')
+            console.log(err)
+        }) 
+        
     }
 
     const openModal = () => {
@@ -130,8 +138,16 @@ const Navbar: React.FC = (props): ReactElement => {
                     </Link>
                 </div>
                 <i className="Logo-icon"></i>
+               
+            </div>
+            <div className="Header-center">
                 <ActionBtn>
-                    <a href={AuthRoutes.SELECT} className="ActionBtn-name"> Acceso a las Quinielas</a>
+                    <a onClick={refreshHandler} href={AuthRoutes.SELECT} className="ActionBtn-name"> Quinielas</a>
+                </ActionBtn>
+                <ActionBtn>
+                    <Link onClick={scrollToTop} to={NonAuthRoutes.INFO} className="ActionBtn-name">
+                        Reglas
+                    </Link>
                 </ActionBtn>
             </div>
             <div className="Header-right">

@@ -4,7 +4,7 @@ import {USER_DATA, USER_INFO} from '../../constants/index';
 import {HomeInput} from '../HomeInput'
 
 let userPin: {} | null | undefined;
-console.log("USER DATA",localStorage.getItem(USER_DATA))
+// console.log("USER INFO",localStorage.getItem(USER_INFO))
 if(!localStorage.getItem(USER_DATA)){
     userPin = <div className="UserPin">
         <span className="UserPin">Debe registrarse para obtener su pin de invitado</span>

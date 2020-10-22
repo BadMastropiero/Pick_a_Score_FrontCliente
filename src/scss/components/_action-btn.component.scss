@@ -1,6 +1,8 @@
 .ActionBtn{
     &-name{
+      border: 1px solid var(--color-main-alert);
       color: var(--color-main-alert);
+      padding: 1px;
     }
     &-title{
         color: #F5F3F5;

@@ -78,7 +78,7 @@ export const HomeInput = () => {
     <div className="animated-form">
       <div className="form-group">
         <form name="HomeInput" className='form' >
-          <label>Introduzca Pin</label>
+          {/* <label>Introduzca Pin</label> */}
           <input
             type="password"
             placeholder="PIN"

@@ -63,8 +63,8 @@ export function getBetsByGame(gameId: string) {
 export function gameInfo (IDgame: string) {
     const url = `${basePath}/user/games/gameInfo`;
     const token = ACCESS_INFO.token
-    console.log(IDgame)
-    console.log(token)
+    // console.log(IDgame)
+    // console.log(token)
     const params = {
         method: 'POST',
         headers: {
