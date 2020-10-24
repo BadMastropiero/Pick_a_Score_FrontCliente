@@ -1,5 +1,5 @@
 import React, { Fragment, ReactElement } from 'react';
-import LOGO from '../../assets/logos/LOGO_V1.png';
+import LOGO from '../../assets/logos/LOGO_V1.webp';
 
 const TheFooter: React.FC = (): ReactElement => {
     return (

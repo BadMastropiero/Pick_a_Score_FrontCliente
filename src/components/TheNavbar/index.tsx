@@ -7,10 +7,12 @@ import Swal from 'sweetalert2';
 import {scrollToTop, openInNewTab} from '../../utils';
 import {ACCESS_TOKEN, ACCESS_INFO, USER_DATA, USER_INFO} from '../../constants/index';
 
-
+// components
 import ActionBtn from '../ActionBtn';
-import LOGO from '../../assets/logos/LOGO_V1.png';
 import UserRegisterPage from '../UserRegisterModal'
+
+// images
+import LOGO from '../../assets/logos/LOGO_V1.webp';
 
 const Navbar: React.FC = (props): ReactElement => {
 
